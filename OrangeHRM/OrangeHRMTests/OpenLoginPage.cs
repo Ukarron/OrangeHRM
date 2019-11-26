@@ -4,6 +4,7 @@ using System.Threading;
 namespace OrangeHRMTests
 {
     [TestFixture]
+    [Chrome, Firefox]
     public class Test1
     {
         Browser browser = new Browser();
@@ -13,7 +14,7 @@ namespace OrangeHRMTests
         {
             browser.OpenUrl();
 
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
         }
 
         [TearDown]

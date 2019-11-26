@@ -1,12 +1,9 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using OrangeHRM;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrangeHRMTests
 {
@@ -14,9 +11,13 @@ namespace OrangeHRMTests
     {
         private static IWebDriver _driver;
 
+        public const string Chrome = "Chrome";
+        public const string Firefox = "Firefox";
+        public const string InternetExplorer = "InternetExplorer";       
+
         public static IWebDriver Start()
         {
-            var browser = ConfigurationManager.AppSettings["Browser"];
+            var browser = RunConfiguration.Browser;
 
             switch (browser)
             {
@@ -39,9 +40,9 @@ namespace OrangeHRMTests
 
         public void OpenUrl()
         {
-            var str = ConfigurationManager.AppSettings["Url"];
+            var url = RunConfiguration.Url;
 
-            Driver.Navigate().GoToUrl(str);
+            Driver.Navigate().GoToUrl(url);
         }
 
         public static IWebDriver Driver
@@ -61,5 +62,23 @@ namespace OrangeHRMTests
             _driver.Quit();
             _driver = null;
         }
+    }
+
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+    public class ChromeAttribute : CategoryAttribute
+    {
+        public ChromeAttribute() : base(Browser.Chrome) { }
+    }
+
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+    public class FirefoxAttribute : CategoryAttribute
+    {
+        public FirefoxAttribute() : base(Browser.Firefox) { }
+    }
+
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+    public class InternetExplorerAttribute : CategoryAttribute
+    {
+        public InternetExplorerAttribute() : base(Browser.InternetExplorer) { }
     }
 }
