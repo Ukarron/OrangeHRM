@@ -63,7 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractPage.cs" />
     <Compile Include="Browser.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunConfiguration.cs" />
   </ItemGroup>

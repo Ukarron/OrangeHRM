@@ -1,15 +1,15 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OrangeHRM;
-using System;
 
 namespace OrangeHRMTests
 {
     public class Browser
     {
         private static IWebDriver _driver;
+        private static ChromeOptions _chromeOptions;
+        private static FirefoxOptions _firefoxOptions;
 
         public const string Chrome = "Chrome";
         public const string Firefox = "Firefox";
@@ -22,15 +22,15 @@ namespace OrangeHRMTests
             switch (browser)
             {
                 case "Chrome":
-                    _driver = new ChromeDriver();
+                    _driver = new ChromeDriver(ChromeOptions);
                     break;
 
                 case "Firefox":
-                    _driver = new FirefoxDriver();
+                    _driver = new FirefoxDriver(FirefoxOptions);
                     break;
 
                 default:
-                    _driver = new ChromeDriver();
+                    _driver = new ChromeDriver(ChromeOptions);
                     break;
             }
             _driver.Manage().Window.Maximize();
@@ -38,7 +38,7 @@ namespace OrangeHRMTests
             return _driver;
         }
 
-        public void OpenUrl()
+        public void OpenBaseUrl()
         {
             var url = RunConfiguration.Url;
 
@@ -57,28 +57,39 @@ namespace OrangeHRMTests
             }
         }
 
+        public static ChromeOptions ChromeOptions
+        {
+            get
+            {
+                _chromeOptions = new ChromeOptions();
+                _chromeOptions.AddArgument("--incognito");
+                _chromeOptions.AddArgument("--disable-extensions");
+                _chromeOptions.AddArgument("--disable-notifications");
+                _chromeOptions.AddExcludedArgument("enable-automation");
+                _chromeOptions.AddArguments("--disable-popup-blocking");
+                _chromeOptions.AddAdditionalCapability("useAutomationExtension", false);
+                return _chromeOptions;
+            }
+        }
+
+        public static FirefoxOptions FirefoxOptions
+        {
+            get
+            {
+                _firefoxOptions = new FirefoxOptions();
+                _firefoxOptions.AddArgument("--disable-infobars");
+                _firefoxOptions.AddArgument("--disable-popup-blocking");
+                _firefoxOptions.AddArgument("--disable-extensions");
+                _firefoxOptions.AddArgument("enable-automation");
+                _firefoxOptions.AddAdditionalCapability("useAutomationExtension", false);
+                return _firefoxOptions;
+            }
+        }
+
         public static void Close()
         {
             _driver.Quit();
             _driver = null;
         }
-    }
-
-    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-    public class ChromeAttribute : CategoryAttribute
-    {
-        public ChromeAttribute() : base(Browser.Chrome) { }
-    }
-
-    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-    public class FirefoxAttribute : CategoryAttribute
-    {
-        public FirefoxAttribute() : base(Browser.Firefox) { }
-    }
-
-    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-    public class InternetExplorerAttribute : CategoryAttribute
-    {
-        public InternetExplorerAttribute() : base(Browser.InternetExplorer) { }
     }
 }
