@@ -65,11 +65,13 @@
   <ItemGroup>
     <Compile Include="Pages\AbstractPage.cs" />
     <Compile Include="Pages\MainPage.cs" />
+    <Compile Include="Pages\Menu.cs" />
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\PersonalMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\EnumDescription.cs" />
     <Compile Include="Tools\RunConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OrangeHRM.Pages;
 using OrangeHRM.Tools;
 
 namespace OrangeHRMTests
