@@ -8,6 +8,7 @@ namespace OrangeHRMTests
     {
         private Browser _browser;
         private LoginPage _loginPage;
+        private PersonalMenu _personalMenu;
 
         [OneTimeTearDown]
         public void OneTimeTearDownTest()
@@ -15,9 +16,10 @@ namespace OrangeHRMTests
             Browser.Close();
         }
 
-        public void Login(string username = "Admin", string password = "admin123")
+        public void OpenBrowserAndLogin()
         {
             Browser.OpenBaseUrl();
+            LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
         }
 
         protected Browser Browser
@@ -29,5 +31,6 @@ namespace OrangeHRMTests
         }
 
         protected LoginPage LoginPage => _loginPage = new LoginPage();
+        protected PersonalMenu PersonalMenu => _personalMenu = new PersonalMenu();
     }
 }

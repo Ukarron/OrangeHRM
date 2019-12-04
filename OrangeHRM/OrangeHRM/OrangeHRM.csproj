@@ -67,6 +67,7 @@
     <Compile Include="Browser.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="LoginPage.cs" />
+    <Compile Include="PersonalMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunConfiguration.cs" />
   </ItemGroup>
