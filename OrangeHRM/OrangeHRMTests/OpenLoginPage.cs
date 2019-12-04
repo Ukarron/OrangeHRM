@@ -1,11 +1,10 @@
 ﻿using NUnit.Framework;
-using OrangeHRM;
 using OrangeHRM.Tools;
 
 namespace OrangeHRMTests
 {
     [TestFixture]
-    public class Test1 : BaseTest
+    public class OpenLoginPage : BaseTest
     {
         [Test]
         public void OpenLoginPageTest()
@@ -13,7 +12,7 @@ namespace OrangeHRMTests
             OpenBrowserAndLogin();
 
             var expectedWelcomeText = "Welcome " + RunConfiguration.Username;
-            Assert.AreEqual(expectedWelcomeText, PersonalMenu.GetWelcomeText());
+            Assert.AreEqual(expectedWelcomeText, MainPage.PersonalMenu.GetWelcomeText());
         }
     }
 }

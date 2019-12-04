@@ -30,7 +30,7 @@ namespace OrangeHRM.Pages
         }
     }
 
-    public class LoginPage_Selectors : AbstractPage_Selectors
+    public class LoginPage_Selectors
     {
         public readonly By UsernameField = By.Id("txtUsername");
         public readonly By PasswordField = By.Id("txtPassword");

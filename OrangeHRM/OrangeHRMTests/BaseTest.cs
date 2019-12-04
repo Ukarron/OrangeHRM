@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OrangeHRM;
 using OrangeHRM.Pages;
 using OrangeHRM.Tools;
 
@@ -10,7 +9,7 @@ namespace OrangeHRMTests
     {
         private Browser _browser;
         private LoginPage _loginPage;
-        private PersonalMenu _personalMenu;
+        private MainPage _mainPage;
 
         [OneTimeTearDown]
         public void OneTimeTearDownTest()
@@ -33,6 +32,6 @@ namespace OrangeHRMTests
         }
 
         protected LoginPage LoginPage => _loginPage = new LoginPage();
-        protected PersonalMenu PersonalMenu => _personalMenu = new PersonalMenu();
+        protected MainPage MainPage => _mainPage = new MainPage();
     }
 }

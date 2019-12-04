@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AbstractPage.cs" />
+    <Compile Include="Pages\MainPage.cs" />
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Pages\LoginPage.cs" />
