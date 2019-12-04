@@ -1,7 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OrangeHRM;
+using OpenQA.Selenium.IE;
+using OrangeHRM.Tools;
 
 namespace OrangeHRMTests
 {
@@ -10,6 +11,7 @@ namespace OrangeHRMTests
         private static IWebDriver _driver;
         private static ChromeOptions _chromeOptions;
         private static FirefoxOptions _firefoxOptions;
+        private static InternetExplorerOptions _internetExplorerOptions;
 
         public const string Chrome = "Chrome";
         public const string Firefox = "Firefox";
@@ -27,6 +29,10 @@ namespace OrangeHRMTests
 
                 case "Firefox":
                     _driver = new FirefoxDriver(FirefoxOptions);
+                    break;
+
+                case "IE":
+                    _driver = new InternetExplorerDriver(InternetExplorerOptions);
                     break;
 
                 default:
@@ -57,7 +63,7 @@ namespace OrangeHRMTests
             }
         }
 
-        public static ChromeOptions ChromeOptions
+        private static ChromeOptions ChromeOptions
         {
             get
             {
@@ -72,7 +78,7 @@ namespace OrangeHRMTests
             }
         }
 
-        public static FirefoxOptions FirefoxOptions
+        private static FirefoxOptions FirefoxOptions
         {
             get
             {
@@ -83,6 +89,16 @@ namespace OrangeHRMTests
                 _firefoxOptions.AddArgument("enable-automation");
                 _firefoxOptions.AddAdditionalCapability("useAutomationExtension", false);
                 return _firefoxOptions;
+            }
+        }
+
+        private static InternetExplorerOptions InternetExplorerOptions
+        {
+            get
+            {
+                _internetExplorerOptions = new InternetExplorerOptions();
+                _internetExplorerOptions.AddAdditionalCapability("useAutomationExtension", false);
+                return _internetExplorerOptions;
             }
         }
 

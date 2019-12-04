@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace OrangeHRM
+namespace OrangeHRM.Tools
 {
     public static class RunConfiguration
     {
