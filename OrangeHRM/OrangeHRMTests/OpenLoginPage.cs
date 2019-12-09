@@ -14,6 +14,9 @@ namespace OrangeHRMTests
 
             var expectedWelcomeText = "Welcome " + RunConfiguration.Username;
             Assert.AreEqual(expectedWelcomeText, MainPage.PersonalMenu.GetWelcomeText());
+
+            //MainPage.Menu.MouseOverItem(FirstLevelMenu.Leave);
+            MainPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "Job", "Job Titles");
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using OrangeHRMTests;
 using System;
 
 namespace OrangeHRM
@@ -9,6 +11,7 @@ namespace OrangeHRM
         private IWebDriver _driver;
         private WebDriverWait _webDriverWait;
         private int _defaultWaitTime = 20;
+        private Actions _actions; 
 
         public Helpers(IWebDriver driver)
         {
@@ -36,6 +39,12 @@ namespace OrangeHRM
             return _driver.FindElement(element).Text;
         }
 
+        public void MouseOver(By element)
+        {
+            Wait.Until(ExpectedConditions.ElementIsVisible(element));
+            Actions.MoveToElement(Browser.Driver.FindElement(element)).Perform();
+        }
+
         private WebDriverWait Wait
         {
             get
@@ -45,6 +54,18 @@ namespace OrangeHRM
                     _webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(_defaultWaitTime));
                 }
                 return _webDriverWait;
+            }
+        }
+
+        private Actions Actions
+        {
+            get
+            {
+                if (_actions == null)
+                {
+                    _actions = new Actions(Browser.Driver);
+                }
+                return _actions;
             }
         }
     }

@@ -8,6 +8,7 @@
         public MainPage() 
             : base(new MainPage_Selectors()) {}
 
+
         public PersonalMenu PersonalMenu => _personalMenu = new PersonalMenu();
         public Menu Menu => _menu = new Menu();
     }
