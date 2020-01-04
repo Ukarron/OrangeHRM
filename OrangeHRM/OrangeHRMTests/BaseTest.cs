@@ -5,9 +5,9 @@ using OrangeHRM.Tools;
 namespace OrangeHRMTests
 {
     [TestFixture]
+    [Parallelizable]
     public abstract class BaseTest
     {
-        private Browser _browser;
         private LoginPage _loginPage;
         private MainPage _mainPage;
 
@@ -21,14 +21,6 @@ namespace OrangeHRMTests
         {
             Browser.OpenBaseUrl();
             LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
-        }
-
-        protected Browser Browser
-        {
-            get
-            {
-                return _browser = new Browser();
-            }
         }
 
         protected LoginPage LoginPage => _loginPage = new LoginPage();

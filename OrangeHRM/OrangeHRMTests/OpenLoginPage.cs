@@ -8,6 +8,7 @@ namespace OrangeHRMTests
     public class OpenLoginPage : BaseTest
     {
         [Test]
+        [Parallelizable(ParallelScope.Self)]
         public void OpenLoginPageTest()
         {
             OpenBrowserAndLogin();

@@ -3,19 +3,27 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OrangeHRM.Tools;
+using System;
 
 namespace OrangeHRMTests
 {
     public class Browser
     {
+        public const string Chrome = "Chrome";
+        public const string Firefox = "Firefox";
+        public const string InternetExplorer = "InternetExplorer";
+
         private static IWebDriver _driver;
         private static ChromeOptions _chromeOptions;
         private static FirefoxOptions _firefoxOptions;
         private static InternetExplorerOptions _internetExplorerOptions;
 
-        public const string Chrome = "Chrome";
-        public const string Firefox = "Firefox";
-        public const string InternetExplorer = "InternetExplorer";       
+        private static object syncRoot = new Object();
+
+        private Browser()
+        {
+
+        }
 
         public static IWebDriver Start()
         {
@@ -44,7 +52,7 @@ namespace OrangeHRMTests
             return _driver;
         }
 
-        public void OpenBaseUrl()
+        public static void OpenBaseUrl()
         {
             var url = RunConfiguration.Url;
 
@@ -57,7 +65,10 @@ namespace OrangeHRMTests
             {
                 if (_driver == null)
                 {
-                    _driver = Start();
+                    lock (syncRoot)
+                    {
+                        _driver = Start();
+                    }
                 }
                 return _driver;
             }
@@ -109,3 +120,4 @@ namespace OrangeHRMTests
         }
     }
 }
+
