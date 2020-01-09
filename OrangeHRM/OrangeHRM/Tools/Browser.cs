@@ -20,10 +20,7 @@ namespace OrangeHRMTests
 
         private static object syncRoot = new Object();
 
-        private Browser()
-        {
-
-        }
+        private Browser(){}
 
         public static IWebDriver Start()
         {
@@ -79,11 +76,13 @@ namespace OrangeHRMTests
             get
             {
                 _chromeOptions = new ChromeOptions();
-                _chromeOptions.AddArgument("--incognito");
-                _chromeOptions.AddArgument("--disable-extensions");
-                _chromeOptions.AddArgument("--disable-notifications");
+
+                _chromeOptions.AddArguments("--incognito",
+                    "--disable-popup-blocking",
+                    "--disable-extensions",
+                    "--disable-notifications");
+
                 _chromeOptions.AddExcludedArgument("enable-automation");
-                _chromeOptions.AddArguments("--disable-popup-blocking");
                 _chromeOptions.AddAdditionalCapability("useAutomationExtension", false);
                 return _chromeOptions;
             }
@@ -94,10 +93,12 @@ namespace OrangeHRMTests
             get
             {
                 _firefoxOptions = new FirefoxOptions();
-                _firefoxOptions.AddArgument("--disable-infobars");
-                _firefoxOptions.AddArgument("--disable-popup-blocking");
-                _firefoxOptions.AddArgument("--disable-extensions");
-                _firefoxOptions.AddArgument("enable-automation");
+
+                _firefoxOptions.AddArguments("--disable-infobars",
+                    "--disable-popup-blocking",
+                    "--disable-extensions",
+                    "enable-automation");
+
                 _firefoxOptions.AddAdditionalCapability("useAutomationExtension", false);
                 return _firefoxOptions;
             }

@@ -76,6 +76,7 @@
     <Compile Include="BaseTest.cs" />
     <Compile Include="OpenLoginPage.cs" />
     <Compile Include="OpenLoginPage1.cs" />
+    <Compile Include="OpenLoginPage2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

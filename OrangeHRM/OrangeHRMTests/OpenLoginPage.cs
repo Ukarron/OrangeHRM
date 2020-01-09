@@ -5,10 +5,10 @@ using OrangeHRM.Tools;
 namespace OrangeHRMTests
 {
     [TestFixture]
+    [Parallelizable]
     public class OpenLoginPage : BaseTest
     {
         [Test]
-        [Parallelizable(ParallelScope.Self)]
         public void OpenLoginPageTest()
         {
             OpenBrowserAndLogin();
