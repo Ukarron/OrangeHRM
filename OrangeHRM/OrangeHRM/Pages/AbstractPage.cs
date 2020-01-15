@@ -1,35 +1,21 @@
 ﻿using OpenQA.Selenium;
-using OrangeHRMTests;
 
 namespace OrangeHRM.Pages
 {
     public abstract class AbstractPage<T>
     {
-        private IWebDriver _driver;
-        private Helpers _helpers;
-        private T _selectors;
+        protected Pages pages;
+        protected T _selectors;
 
-        public AbstractPage(T type)
+        public AbstractPage(Pages p, T type)
         {
-            _driver = Browser.Driver;
+            pages = p;
             _selectors = type;
         }
 
         public T Selectors
         {
-            get
-            {
-                return _selectors;
-            }
-        }
-
-        public Helpers Helpers
-        {
-            get
-            {
-                _helpers = new Helpers(_driver);
-                return _helpers;
-            }
+            get { return _selectors; }
         }
     }
 }

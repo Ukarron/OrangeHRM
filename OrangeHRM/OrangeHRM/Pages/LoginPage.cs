@@ -4,22 +4,22 @@ namespace OrangeHRM.Pages
 {
     public class LoginPage : AbstractPage<LoginPage_Selectors>
     {
-        public LoginPage() 
-            : base(new LoginPage_Selectors()){}
+        public LoginPage(Pages p) 
+            : base(p, new LoginPage_Selectors()){}
 
         public void EnterUserName(string username)
         {
-            Helpers.EnterText(Selectors.UsernameField, username);
+            pages.EnterText(Selectors.UsernameField, username);
         }
 
         public void EnterPassword(string password)
         {
-            Helpers.EnterText(Selectors.PasswordField, password);
+            pages.EnterText(Selectors.PasswordField, password);
         }
 
         public void ClickLoginButton()
         {
-            Helpers.Click(Selectors.LoginButton);
+            pages.Click(Selectors.LoginButton);
         }
 
         public void Login(string username, string password)

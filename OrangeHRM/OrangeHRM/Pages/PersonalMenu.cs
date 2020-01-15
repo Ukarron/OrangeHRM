@@ -4,12 +4,12 @@ namespace OrangeHRM.Pages
 {
     public class PersonalMenu : AbstractPage<PersonalMenu_Selectors>
     {
-        public PersonalMenu() 
-            : base(new PersonalMenu_Selectors()) {}
+        public PersonalMenu(Pages p) 
+            : base(p, new PersonalMenu_Selectors()) {}
 
         public string GetWelcomeText()
         {
-            var welcomeText = Helpers.GetText(Selectors.PersonalMenuIcon);
+            var welcomeText = pages.GetText(Selectors.PersonalMenuIcon);
             return welcomeText;
         }
     }

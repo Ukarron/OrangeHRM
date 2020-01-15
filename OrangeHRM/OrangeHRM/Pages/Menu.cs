@@ -8,17 +8,17 @@ namespace OrangeHRM.Pages
 {
     public class Menu : AbstractPage<Menu_Selectors>
     {
-        public Menu() 
-            : base(new Menu_Selectors()) {}
+        public Menu(Pages p) 
+            : base(p, new Menu_Selectors()) {}
 
         public void SelectItem(string item)
         {
-            Helpers.Click(Selectors.FirstLevelMenu(item));
+            pages.Click(Selectors.FirstLevelMenu(item));
         }
 
         public void MouseOverItem(string item)
         {
-            Helpers.MouseOver(Selectors.FirstLevelMenu(item));
+            pages.MouseOver(Selectors.FirstLevelMenu(item));
         }
 
         public void ExpandMenuTreeAndSeectItem(params string[] itemNames)
@@ -46,20 +46,20 @@ namespace OrangeHRM.Pages
 
         private void FindFirstLevelItem(string item)
         {
-            Helpers.Click(Selectors.FirstLevelMenu(item));
+            pages.Click(Selectors.FirstLevelMenu(item));
         }
 
         private void FindSecondLevelItem(params string[] itemNames)
         {
-            Helpers.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
-            Helpers.Click(Selectors.SecondLevelMenu(itemNames[1]));
+            pages.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
+            pages.Click(Selectors.SecondLevelMenu(itemNames[1]));
         }
 
         private void FindThirdLevelItem(params string[] itemNames)
         {
-            Helpers.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
-            Helpers.MouseOver(Selectors.SecondLevelMenu(itemNames[1]));
-            Helpers.Click(Selectors.ThirdLevelMenu(itemNames[2]));
+            pages.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
+            pages.MouseOver(Selectors.SecondLevelMenu(itemNames[1]));
+            pages.Click(Selectors.ThirdLevelMenu(itemNames[2]));
         }
     }
 

@@ -1,33 +1,32 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using OrangeHRMTests;
 using System;
 
-namespace OrangeHRM
+namespace OrangeHRM.Pages
 {
-    public class Helpers
+    public class Pages
     {
-        private IWebDriver _driver;
+        private IWebDriver Driver;
         private WebDriverWait _webDriverWait;
+        private Actions _actions;
         private int _defaultWaitTime = 20;
-        private Actions _actions; 
 
-        public Helpers(IWebDriver driver)
+        public Pages(IWebDriver driver)
         {
-            this._driver = driver;
+            this.Driver = driver;
         }
 
         public void Click(By element)
         {
             Wait.Until(ExpectedConditions.ElementIsVisible(element));
-            _driver.FindElement(element).Click();
+            Driver.FindElement(element).Click();
         }
 
         public void EnterText(By element, string text, bool needToclear = false)
         {
             Wait.Until(ExpectedConditions.ElementIsVisible(element));
-            var el = _driver.FindElement(element);
+            var el = Driver.FindElement(element);
             if (needToclear)
                 el.Clear();
             el.SendKeys(text);
@@ -36,13 +35,13 @@ namespace OrangeHRM
         public string GetText(By element)
         {
             Wait.Until(ExpectedConditions.ElementIsVisible(element));
-            return _driver.FindElement(element).Text;
+            return Driver.FindElement(element).Text;
         }
 
         public void MouseOver(By element)
         {
             Wait.Until(ExpectedConditions.ElementIsVisible(element));
-            Actions.MoveToElement(Browser.Driver.FindElement(element)).Perform();
+            Actions.MoveToElement(Driver.FindElement(element)).Perform();
         }
 
         private WebDriverWait Wait
@@ -51,7 +50,7 @@ namespace OrangeHRM
             {
                 if (_webDriverWait == null)
                 {
-                    _webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(_defaultWaitTime));
+                    _webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(_defaultWaitTime));
                 }
                 return _webDriverWait;
             }
@@ -63,7 +62,7 @@ namespace OrangeHRM
             {
                 if (_actions == null)
                 {
-                    _actions = new Actions(Browser.Driver);
+                    _actions = new Actions(Driver);
                 }
                 return _actions;
             }
