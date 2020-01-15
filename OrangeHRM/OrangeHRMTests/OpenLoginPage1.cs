@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using OrangeHRM.Pages;
+using System.Threading;
 
 namespace OrangeHRMTests
 {
@@ -12,7 +12,9 @@ namespace OrangeHRMTests
         {
             OpenBrowserAndLogin();
 
-            MainPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "Job", "Job Titles");
+            Page.MainPage.Menu.ExpandMenuTreeAndSeectItem("PIM", "Reports");
+
+            Thread.Sleep(10000);
         }
     }
 }

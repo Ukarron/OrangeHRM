@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using OrangeHRM.Pages;
+using System.Threading;
 
 namespace OrangeHRMTests
 {
@@ -8,11 +8,13 @@ namespace OrangeHRMTests
     public class OpenLoginPage2 : BaseTest
     {
         [Test]
-        public void OpenLoginPageTest1()
+        public void OpenLoginPageTest2()
         {
             OpenBrowserAndLogin();
 
-            MainPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "Job", "Job Titles");
+            Page.MainPage.Menu.ExpandMenuTreeAndSeectItem("Time");
+
+            Thread.Sleep(10000);
         }
     }
 }

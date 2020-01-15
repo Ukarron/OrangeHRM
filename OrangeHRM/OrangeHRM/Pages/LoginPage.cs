@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OrangeHRM.Tools;
 
 namespace OrangeHRM.Pages
 {
@@ -24,6 +25,7 @@ namespace OrangeHRM.Pages
 
         public void Login(string username, string password)
         {
+            pages.OpenUrl(RunConfiguration.Url);
             EnterUserName(username);
             EnterPassword(password);
             ClickLoginButton();

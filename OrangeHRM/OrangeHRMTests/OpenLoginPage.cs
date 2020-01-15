@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
-using OrangeHRM.Pages;
 using OrangeHRM.Tools;
+using System.Threading;
 
 namespace OrangeHRMTests
 {
@@ -14,10 +14,12 @@ namespace OrangeHRMTests
             OpenBrowserAndLogin();
 
             var expectedWelcomeText = "Welcome " + RunConfiguration.Username;
-            Assert.AreEqual(expectedWelcomeText, MainPage.PersonalMenu.GetWelcomeText());
+            Assert.AreEqual(expectedWelcomeText, Page.MainPage.PersonalMenu.GetWelcomeText());
 
             //MainPage.Menu.MouseOverItem(FirstLevelMenu.Leave);
-            MainPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "Job", "Job Titles");
+            Page.MainPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "Job", "Job Titles");
+
+            Thread.Sleep(1000);
         }
     }
 }

@@ -12,9 +12,20 @@ namespace OrangeHRM.Pages
         private Actions _actions;
         private int _defaultWaitTime = 20;
 
+        private LoginPage _loginPage;
+        private MainPage _mainPage;
+
+        public LoginPage LoginPage => _loginPage = new LoginPage(this);
+        public MainPage MainPage => _mainPage = new MainPage(this);
+
         public Pages(IWebDriver driver)
         {
-            this.Driver = driver;
+            Driver = driver;
+        }
+
+        public void OpenUrl(string url)
+        {
+            Driver.Navigate().GoToUrl(url);
         }
 
         public void Click(By element)

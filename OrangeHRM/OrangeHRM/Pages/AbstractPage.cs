@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-
-namespace OrangeHRM.Pages
+﻿namespace OrangeHRM.Pages
 {
     public abstract class AbstractPage<T>
     {

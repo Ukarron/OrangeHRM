@@ -1,6 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OrangeHRMTests;
 using System;
 using System.ComponentModel;
 
