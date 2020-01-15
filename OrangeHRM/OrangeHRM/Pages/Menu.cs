@@ -11,12 +11,12 @@ namespace OrangeHRM.Pages
 
         public void SelectItem(string item)
         {
-            pages.Click(Selectors.FirstLevelMenu(item));
+            pages.UIInteraction.Click(Selectors.FirstLevelMenu(item));
         }
 
         public void MouseOverItem(string item)
         {
-            pages.MouseOver(Selectors.FirstLevelMenu(item));
+            pages.UIInteraction.MouseOver(Selectors.FirstLevelMenu(item));
         }
 
         public void ExpandMenuTreeAndSeectItem(params string[] itemNames)
@@ -44,20 +44,20 @@ namespace OrangeHRM.Pages
 
         private void FindFirstLevelItem(string item)
         {
-            pages.Click(Selectors.FirstLevelMenu(item));
+            pages.UIInteraction.Click(Selectors.FirstLevelMenu(item));
         }
 
         private void FindSecondLevelItem(params string[] itemNames)
         {
-            pages.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
-            pages.Click(Selectors.SecondLevelMenu(itemNames[1]));
+            pages.UIInteraction.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
+            pages.UIInteraction.Click(Selectors.SecondLevelMenu(itemNames[1]));
         }
 
         private void FindThirdLevelItem(params string[] itemNames)
         {
-            pages.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
-            pages.MouseOver(Selectors.SecondLevelMenu(itemNames[1]));
-            pages.Click(Selectors.ThirdLevelMenu(itemNames[2]));
+            pages.UIInteraction.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
+            pages.UIInteraction.MouseOver(Selectors.SecondLevelMenu(itemNames[1]));
+            pages.UIInteraction.Click(Selectors.ThirdLevelMenu(itemNames[2]));
         }
     }
 

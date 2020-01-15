@@ -9,7 +9,7 @@ namespace OrangeHRM.Pages
 
         public string GetWelcomeText()
         {
-            var welcomeText = pages.GetText(Selectors.PersonalMenuIcon);
+            var welcomeText = pages.UIInteraction.GetText(Selectors.PersonalMenuIcon);
             return welcomeText;
         }
     }

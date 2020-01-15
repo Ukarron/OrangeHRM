@@ -10,17 +10,17 @@ namespace OrangeHRM.Pages
 
         public void EnterUserName(string username)
         {
-            pages.EnterText(Selectors.UsernameField, username);
+            pages.UIInteraction.EnterText(Selectors.UsernameField, username);
         }
 
         public void EnterPassword(string password)
         {
-            pages.EnterText(Selectors.PasswordField, password);
+            pages.UIInteraction.EnterText(Selectors.PasswordField, password);
         }
 
         public void ClickLoginButton()
         {
-            pages.Click(Selectors.LoginButton);
+            pages.UIInteraction.Click(Selectors.LoginButton);
         }
 
         public void Login(string username, string password)
