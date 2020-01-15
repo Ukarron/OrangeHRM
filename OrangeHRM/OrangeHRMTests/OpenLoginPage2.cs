@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OrangeHRM.Tools;
 using System.Threading;
 
 namespace OrangeHRMTests
@@ -10,7 +11,7 @@ namespace OrangeHRMTests
         [Test]
         public void OpenLoginPageTest2()
         {
-            OpenBrowserAndLogin();
+            Page.LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
 
             Page.MainPage.Menu.ExpandMenuTreeAndSeectItem("Time");
 

@@ -23,9 +23,17 @@ namespace OrangeHRM.Pages
             pages.UIInteraction.Click(Selectors.LoginButton);
         }
 
-        public void Login(string username, string password)
+        public void Login(string username, string password, string url = null)
         {
-            pages.UrlManager.OpenUrl(RunConfiguration.Url);
+            if (url == null)
+            {
+                pages.UrlManager.OpenUrl(RunConfiguration.Url);
+            }
+            else
+            {
+                pages.UrlManager.OpenUrl(url);
+            }   
+
             EnterUserName(username);
             EnterPassword(password);
             ClickLoginButton();

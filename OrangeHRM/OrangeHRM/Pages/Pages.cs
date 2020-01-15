@@ -16,11 +16,6 @@ namespace OrangeHRM.Pages
             _driver = driver;
         }
 
-        //public void OpenUrl(string url)
-        //{
-        //    _driver.Navigate().GoToUrl(url);
-        //}
-
         public UrlManager UrlManager => _urlManager = new UrlManager(_driver);
         public UIInteraction UIInteraction => _uiInteraction = new UIInteraction(_driver);
         public LoginPage LoginPage => _loginPage = new LoginPage(this);

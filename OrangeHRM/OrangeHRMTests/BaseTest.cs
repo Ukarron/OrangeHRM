@@ -17,10 +17,5 @@ namespace OrangeHRMTests
         {
             _browser.Close();
         }
-
-        public void OpenBrowserAndLogin()
-        {
-            Page.LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
-        }
     }
 }

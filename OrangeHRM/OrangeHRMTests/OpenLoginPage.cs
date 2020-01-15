@@ -11,7 +11,7 @@ namespace OrangeHRMTests
         [Test]
         public void OpenLoginPageTest()
         {
-            OpenBrowserAndLogin();
+            Page.LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
 
             var expectedWelcomeText = "Welcome " + RunConfiguration.Username;
             Assert.AreEqual(expectedWelcomeText, Page.MainPage.PersonalMenu.GetWelcomeText());
