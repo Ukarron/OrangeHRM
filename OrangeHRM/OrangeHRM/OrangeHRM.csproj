@@ -74,6 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\EnumDescription.cs" />
     <Compile Include="Tools\RunConfiguration.cs" />
+    <Compile Include="Tools\UrlManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
