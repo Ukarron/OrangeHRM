@@ -31,7 +31,7 @@ namespace OrangeHRM.Tools
             switch (browser)
             {
                 case "Chrome":
-                    _driver = new ChromeDriver(ChromeOptions);
+                    _driver = new ChromeDriver(/*ChromeOptions*/);
                     break;
 
                 case "Firefox":
@@ -43,7 +43,7 @@ namespace OrangeHRM.Tools
                     break;
 
                 default:
-                    _driver = new ChromeDriver(ChromeOptions);
+                    _driver = new ChromeDriver(/*ChromeOptions*/);
                     break;
             }
             _driver.Manage().Window.Maximize();

@@ -1,10 +1,12 @@
-﻿using NUnit.Framework;
+﻿using NUnit.Allure.Core;
+using NUnit.Framework;
 using OrangeHRM.Tools;
 using System.Threading;
 
 namespace OrangeHRMTests
 {
     [TestFixture]
+    [AllureNUnit]
     [Parallelizable]
     public class OpenLoginPage : BaseTest
     {
