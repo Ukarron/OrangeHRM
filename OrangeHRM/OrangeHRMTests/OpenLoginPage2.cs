@@ -17,7 +17,7 @@ namespace OrangeHRMTests
 
             Page.MainPage.Menu.ExpandMenuTreeAndSeectItem("Time");
 
-            Thread.Sleep(10000);
+            Thread.Sleep(5000);
         }
     }
 }

@@ -1,8 +1,8 @@
 1.Run tests with the next command:
 C:\Users\1\Source\Repos\Ukarron\OrangeHRM\OrangeHRM\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe "C:\Users\1\Source\Repos\Ukarron\OrangeHRM\OrangeHRM\OrangeHRMTests\bin\Debug\OrangeHRMTests.dll" --inprocess
 
-2.Open directory C:\allure\allure-report-2.7.0\bin
+2.Open directory C:\allure\allure-2.7.0\bin
 
-3.Enter command .\allure generate "C:\allure-reselts" --clean
+3.Enter command .\allure generate "C:\allure\allure-2.7.0\bin\allure-reselts" --clean
 
-4.Enter command .\allure serve "C:\allure-reselts"
+4.Enter command .\allure serve "C:\allure\allure-2.7.0\bin\allure-reselts"

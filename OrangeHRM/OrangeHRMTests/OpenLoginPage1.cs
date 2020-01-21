@@ -16,8 +16,8 @@ namespace OrangeHRMTests
             Page.LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
 
             Page.MainPage.Menu.ExpandMenuTreeAndSeectItem("PIM", "Reports");
-
-            Thread.Sleep(10000);
+            Assert.True(false);
+            Thread.Sleep(5000);
         }
     }
 }
