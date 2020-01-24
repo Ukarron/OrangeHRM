@@ -9,7 +9,7 @@ using System.IO;
 namespace OrangeHRMTests
 {
     [SetUpFixture]
-    public abstract class BaseTest
+    public abstract class BaseTest : AllureReport
     {
         private Pages _pages;
         private Browser _browser = new Browser();

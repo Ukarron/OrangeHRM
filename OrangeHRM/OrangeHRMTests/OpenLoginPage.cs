@@ -1,18 +1,17 @@
-﻿using Allure.Commons;
-using NUnit.Allure.Attributes;
-using NUnit.Allure.Core;
+﻿using Allure.Commons.Model;
+using Allure.NUnit.Attributes;
 using NUnit.Framework;
 using OrangeHRM.Tools;
 
 namespace OrangeHRMTests
 {
     [TestFixture]
-    [AllureNUnit]
+    [AllureSuite("Pass")]
     [Parallelizable]
     public class OpenLoginPage : BaseTest
     {
         [Test(Description = "Login and open Job Titles page")]
-        [AllureSeverity(SeverityLevel.minor)]
+        [AllureSeverity(SeverityLevel.Minor)]
         [AllureTag("Regression")]
         [AllureFeature("Menu")]
         public void OpenLoginPageTest()

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Allure.NUnit.Attributes;
+using OpenQA.Selenium;
 using OrangeHRM.Tools;
 
 namespace OrangeHRM.Pages
@@ -23,6 +24,7 @@ namespace OrangeHRM.Pages
             pages.UIInteraction.Click(Selectors.LoginButton);
         }
 
+        [AllureStep("login")]
         public void Login(string username, string password, string url = null)
         {
             if (url == null)

@@ -1,4 +1,6 @@
-﻿namespace OrangeHRM.Pages
+﻿using Allure.Commons;
+
+namespace OrangeHRM.Pages
 {
     public abstract class AbstractPage<T>
     {

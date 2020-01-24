@@ -1,5 +1,4 @@
-﻿using Allure.Commons;
-using NUnit.Allure.Core;
+﻿using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
 using System;
 using System.ComponentModel;
@@ -21,31 +20,28 @@ namespace OrangeHRM.Pages
             pages.UIInteraction.MouseOver(Selectors.FirstLevelMenu(item));
         }
 
-        
+        [AllureStep]
         public void ExpandMenuTreeAndSeectItem(params string[] itemNames)
         {
-            AllureLifecycle.Instance.WrapInStep(() =>
+            int levelsAmount = itemNames.Length;
+
+            switch (levelsAmount)
             {
-                int levelsAmount = itemNames.Length;
+                case 1:
+                    FindFirstLevelItem(itemNames[0]);
+                    break;
 
-                switch (levelsAmount)
-                {
-                    case 1:
-                        FindFirstLevelItem(itemNames[0]);
-                        break;
+                case 2:
+                    FindSecondLevelItem(itemNames[0], itemNames[1]);
+                    break;
 
-                    case 2:
-                        FindSecondLevelItem(itemNames[0], itemNames[1]);
-                        break;
-
-                    case 3:
-                        FindThirdLevelItem(itemNames[0], itemNames[1], itemNames[2]);
-                        break;
-
-                    default:
-                        throw new Exception($"Invalid level {levelsAmount}");
-                }
-            }, "Expand menu tree and select item");
+                case 3:
+                    FindThirdLevelItem(itemNames[0], itemNames[1], itemNames[2]);
+                    break;
+                    
+                default:
+                    throw new Exception($"Invalid level {levelsAmount}");
+            }
         }
 
         private void FindFirstLevelItem(string item)
