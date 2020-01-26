@@ -3,7 +3,7 @@
     "directory": "allure-results",
     "allowEmptySuites": true,
     "enableParameters": true,
-    "allowLocalHistoryTrend": true,
+    "allowLocalHistoryTrend": false,
     "links": [
 
     ] 

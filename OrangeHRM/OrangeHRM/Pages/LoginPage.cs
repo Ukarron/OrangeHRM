@@ -24,7 +24,7 @@ namespace OrangeHRM.Pages
             pages.UIInteraction.Click(Selectors.LoginButton);
         }
 
-        [AllureStep("login")]
+        [AllureStep]
         public void Login(string username, string password, string url = null)
         {
             if (url == null)
