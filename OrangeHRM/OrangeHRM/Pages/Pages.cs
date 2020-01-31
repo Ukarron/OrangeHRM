@@ -7,7 +7,9 @@ namespace OrangeHRM.Pages
     {
         private IWebDriver _driver;
         private LoginPage _loginPage;
-        private MainPage _mainPage;
+        private DashboardPage _dashboardPage;
+        private AddUserPage _addUserPage;
+        private UsersPage _usersPage;
         private UIInteraction _uiInteraction;
         private UrlManager _urlManager;
 
@@ -19,6 +21,8 @@ namespace OrangeHRM.Pages
         public UrlManager UrlManager => _urlManager = new UrlManager(_driver);
         public UIInteraction UIInteraction => _uiInteraction = new UIInteraction(_driver);
         public LoginPage LoginPage => _loginPage = new LoginPage(this);
-        public MainPage MainPage => _mainPage = new MainPage(this);
+        public DashboardPage DashboardPage => _dashboardPage = new DashboardPage(this);
+        public UsersPage UsersPage => _usersPage = new UsersPage(this);
+        public AddUserPage AddUserPage => _addUserPage = new AddUserPage(this);
     }
 }

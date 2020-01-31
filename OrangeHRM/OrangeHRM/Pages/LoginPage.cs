@@ -11,17 +11,17 @@ namespace OrangeHRM.Pages
 
         public void EnterUserName(string username)
         {
-            pages.UIInteraction.EnterText(Selectors.UsernameField, username);
+            page.UIInteraction.EnterText(Selectors.UsernameField, username);
         }
 
         public void EnterPassword(string password)
         {
-            pages.UIInteraction.EnterText(Selectors.PasswordField, password);
+            page.UIInteraction.EnterText(Selectors.PasswordField, password);
         }
 
         public void ClickLoginButton()
         {
-            pages.UIInteraction.Click(Selectors.LoginButton);
+            page.UIInteraction.Click(Selectors.LoginButton);
         }
 
         [AllureStep]
@@ -29,11 +29,11 @@ namespace OrangeHRM.Pages
         {
             if (url == null)
             {
-                pages.UrlManager.OpenUrl(RunConfiguration.Url);
+                page.UrlManager.OpenUrl(RunConfiguration.Url);
             }
             else
             {
-                pages.UrlManager.OpenUrl(url);
+                page.UrlManager.OpenUrl(url);
             }   
 
             EnterUserName(username);

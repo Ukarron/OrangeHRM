@@ -10,17 +10,17 @@ namespace OrangeHRMTests
     [Parallelizable]
     public class OpenLoginPage : BaseTest
     {
-        [Test(Description = "Login and open Job Titles page")]
-        [AllureSeverity(SeverityLevel.Minor)]
+        [Test(Description = "Login into the application")]
+        [AllureSeverity(SeverityLevel.Critical)]
         [AllureTag("Regression")]
-        [AllureFeature("Menu")]
+        [AllureFeature("Login")]
         public void OpenLoginPageTest()
         {
             Page.LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
 
             var expectedWelcomeText = "Welcome " + RunConfiguration.Username;
-            Assert.AreEqual(expectedWelcomeText, Page.MainPage.PersonalMenu.GetWelcomeText());
-            Page.MainPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "Job", "Job Titles");
+
+            Assert.AreEqual(expectedWelcomeText, Page.DashboardPage.PersonalMenu.GetWelcomeText());
         }
     }
 }

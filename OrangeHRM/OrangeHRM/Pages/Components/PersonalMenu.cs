@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace OrangeHRM.Pages
+namespace OrangeHRM.Pages.Components
 {
     public class PersonalMenu : AbstractPage<PersonalMenu_Selectors>
     {
@@ -9,7 +9,7 @@ namespace OrangeHRM.Pages
 
         public string GetWelcomeText()
         {
-            var welcomeText = pages.UIInteraction.GetText(Selectors.PersonalMenuIcon);
+            var welcomeText = page.UIInteraction.GetText(Selectors.PersonalMenuIcon);
             return welcomeText;
         }
     }

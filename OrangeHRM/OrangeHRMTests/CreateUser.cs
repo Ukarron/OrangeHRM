@@ -6,20 +6,21 @@ using OrangeHRM.Tools;
 namespace OrangeHRMTests
 {
     [TestFixture]
-    [AllureSuite("Fail")]
+    [AllureSuite("Pass")]
     [Parallelizable]
-    public class OpenLoginPage1 : BaseTest
+    public class CreateUser : BaseTest
     {
-        [Test(Description = "Login and open Reports page")]
+        [Test(Description = "Create new user")]
         [AllureSeverity(SeverityLevel.Minor)]
         [AllureTag("Regression")]
-        [AllureFeature("Menu")]
-        public void OpenLoginPageTest1()
+        [AllureFeature("Users")]
+        public void CreateUserTest()
         {
             Page.LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
 
-            Page.MainPage.Menu.ExpandMenuTreeAndSeectItem("PIM", "Reports");
-            Assert.True(false);
+            Page.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "User Management", "Users");
+
+            Page.UsersPage.ClickAddButton();
         }
     }
 }

@@ -3,7 +3,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 
-namespace OrangeHRM.Pages
+namespace OrangeHRM
 {
     public class UIInteraction
     {

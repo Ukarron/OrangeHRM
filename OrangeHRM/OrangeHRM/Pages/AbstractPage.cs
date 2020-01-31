@@ -4,12 +4,12 @@ namespace OrangeHRM.Pages
 {
     public abstract class AbstractPage<T>
     {
-        protected Pages pages;
-        protected T _selectors;
+        protected Pages page;
+        private T _selectors;
 
         public AbstractPage(Pages p, T type)
         {
-            pages = p;
+            page = p;
             _selectors = type;
         }
 

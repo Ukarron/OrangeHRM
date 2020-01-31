@@ -119,7 +119,7 @@
   <ItemGroup>
     <Compile Include="BaseTest.cs" />
     <Compile Include="OpenLoginPage.cs" />
-    <Compile Include="OpenLoginPage1.cs" />
+    <Compile Include="CreateUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

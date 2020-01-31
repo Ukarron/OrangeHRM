@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using System;
 using System.ComponentModel;
 
-namespace OrangeHRM.Pages
+namespace OrangeHRM.Pages.Components
 {
     public class Menu : AbstractPage<Menu_Selectors>
     {
@@ -12,12 +12,12 @@ namespace OrangeHRM.Pages
 
         public void SelectItem(string item)
         {
-            pages.UIInteraction.Click(Selectors.FirstLevelMenu(item));
+            page.UIInteraction.Click(Selectors.FirstLevelMenu(item));
         }
 
         public void MouseOverItem(string item)
         {
-            pages.UIInteraction.MouseOver(Selectors.FirstLevelMenu(item));
+            page.UIInteraction.MouseOver(Selectors.FirstLevelMenu(item));
         }
 
         [AllureStep]
@@ -46,20 +46,20 @@ namespace OrangeHRM.Pages
 
         private void FindFirstLevelItem(string item)
         {
-            pages.UIInteraction.Click(Selectors.FirstLevelMenu(item));
+            page.UIInteraction.Click(Selectors.FirstLevelMenu(item));
         }
 
         private void FindSecondLevelItem(params string[] itemNames)
         {
-            pages.UIInteraction.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
-            pages.UIInteraction.Click(Selectors.SecondLevelMenu(itemNames[1]));
+            page.UIInteraction.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
+            page.UIInteraction.Click(Selectors.SecondLevelMenu(itemNames[1]));
         }
 
         private void FindThirdLevelItem(params string[] itemNames)
         {
-            pages.UIInteraction.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
-            pages.UIInteraction.MouseOver(Selectors.SecondLevelMenu(itemNames[1]));
-            pages.UIInteraction.Click(Selectors.ThirdLevelMenu(itemNames[2]));
+            page.UIInteraction.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
+            page.UIInteraction.MouseOver(Selectors.SecondLevelMenu(itemNames[1]));
+            page.UIInteraction.Click(Selectors.ThirdLevelMenu(itemNames[2]));
         }
     }
 
@@ -90,12 +90,5 @@ namespace OrangeHRM.Pages
         Directory,
         [Description("Maintenance")]
         Maintenance,
-    }
-
-    public enum MenuLevel
-    {
-        First,
-        Second,
-        Third
     }
 }
