@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Noksa.Allure.StepInjector.2.0.1\build\Noksa.Allure.StepInjector.props" Condition="Exists('..\packages\Noksa.Allure.StepInjector.2.0.1\build\Noksa.Allure.StepInjector.props')" />
   <Import Project="..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props')" />
-  <Import Project="..\packages\Noksa.Allure.StepInjector.1.0.0\build\Noksa.Allure.StepInjector.props" Condition="Exists('..\packages\Noksa.Allure.StepInjector.1.0.0\build\Noksa.Allure.StepInjector.props')" />
   <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -12,10 +12,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OrangeHRM</RootNamespace>
     <AssemblyName>OrangeHRM</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,8 +36,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Allure, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Noksa.NUnit.Allure.3.0.5\lib\net45\Allure.dll</HintPath>
+    <Reference Include="Allure, Version=3.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Noksa.NUnit.Allure.3.0.6\lib\net45\Allure.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MimeTypesMap, Version=1.0.3.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
@@ -63,8 +64,8 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Noksa.Allure.StepInjector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Noksa.Allure.StepInjector.1.0.0\lib\net45\Noksa.Allure.StepInjector.exe</HintPath>
+    <Reference Include="Noksa.Allure.StepInjector, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Noksa.Allure.StepInjector.2.0.1\lib\net45\Noksa.Allure.StepInjector.exe</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
@@ -129,15 +130,15 @@
     <Error Condition="!Exists('..\packages\Selenium.Firefox.WebDriver.0.26.0\build\Selenium.Firefox.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Firefox.WebDriver.0.26.0\build\Selenium.Firefox.WebDriver.targets'))" />
     <Error Condition="!Exists('..\packages\Selenium.InternetExplorer.WebDriver.3.150.1\build\Selenium.InternetExplorer.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.InternetExplorer.WebDriver.3.150.1\build\Selenium.InternetExplorer.WebDriver.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
-    <Error Condition="!Exists('..\packages\Noksa.Allure.StepInjector.1.0.0\build\Noksa.Allure.StepInjector.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Noksa.Allure.StepInjector.1.0.0\build\Noksa.Allure.StepInjector.props'))" />
-    <Error Condition="!Exists('..\packages\Noksa.Allure.StepInjector.1.0.0\build\Noksa.Allure.StepInjector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Noksa.Allure.StepInjector.1.0.0\build\Noksa.Allure.StepInjector.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props'))" />
     <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.79.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.79.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Noksa.Allure.StepInjector.2.0.1\build\Noksa.Allure.StepInjector.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Noksa.Allure.StepInjector.2.0.1\build\Noksa.Allure.StepInjector.props'))" />
+    <Error Condition="!Exists('..\packages\Noksa.Allure.StepInjector.2.0.1\build\Noksa.Allure.StepInjector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Noksa.Allure.StepInjector.2.0.1\build\Noksa.Allure.StepInjector.targets'))" />
   </Target>
   <Import Project="..\packages\Selenium.Firefox.WebDriver.0.26.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.26.0\build\Selenium.Firefox.WebDriver.targets')" />
   <Import Project="..\packages\Selenium.InternetExplorer.WebDriver.3.150.1\build\Selenium.InternetExplorer.WebDriver.targets" Condition="Exists('..\packages\Selenium.InternetExplorer.WebDriver.3.150.1\build\Selenium.InternetExplorer.WebDriver.targets')" />
-  <Import Project="..\packages\Noksa.Allure.StepInjector.1.0.0\build\Noksa.Allure.StepInjector.targets" Condition="Exists('..\packages\Noksa.Allure.StepInjector.1.0.0\build\Noksa.Allure.StepInjector.targets')" />
   <Import Project="..\packages\Selenium.Chrome.WebDriver.79.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.79.0.0\build\Selenium.Chrome.WebDriver.targets')" />
+  <Import Project="..\packages\Noksa.Allure.StepInjector.2.0.1\build\Noksa.Allure.StepInjector.targets" Condition="Exists('..\packages\Noksa.Allure.StepInjector.2.0.1\build\Noksa.Allure.StepInjector.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
