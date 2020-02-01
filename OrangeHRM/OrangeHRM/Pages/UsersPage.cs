@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Allure.NUnit.Attributes;
+using OpenQA.Selenium;
 
 namespace OrangeHRM.Pages
 {
@@ -7,6 +8,7 @@ namespace OrangeHRM.Pages
         public UsersPage(AppManager p) 
             : base(p, new UsersPage_Selectors()){}
 
+        [AllureStep]
         public void ClickAddButton()
         {
             app.UIInteraction.Click(Selectors.AddButton);

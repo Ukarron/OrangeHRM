@@ -5,7 +5,7 @@ using OrangeHRM.Pages;
 using OrangeHRM.Tools;
 using System.Threading;
 
-namespace OrangeHRMTests
+namespace OrangeHRMTests.Tests
 {
     [TestFixture]
     [AllureSuite("GUI")]
@@ -13,7 +13,7 @@ namespace OrangeHRMTests
     public class CreateUser : BaseTest
     {
         [Test(Description = "Create new user")]
-        [AllureSeverity(SeverityLevel.Minor)]
+        [AllureSeverity(SeverityLevel.Normal)]
         [AllureTag("Regression")]
         [AllureFeature("Users")]
         public void CreateUserTest()

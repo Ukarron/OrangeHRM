@@ -118,8 +118,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BaseTest.cs" />
-    <Compile Include="OpenLoginPage.cs" />
-    <Compile Include="CreateUser.cs" />
+    <Compile Include="Tests\OpenLoginPage.cs" />
+    <Compile Include="Tests\CreateUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

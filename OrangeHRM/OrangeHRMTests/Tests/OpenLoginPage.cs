@@ -3,7 +3,7 @@ using Allure.NUnit.Attributes;
 using NUnit.Framework;
 using OrangeHRM.Tools;
 
-namespace OrangeHRMTests
+namespace OrangeHRMTests.Tests
 {
     [TestFixture]
     [AllureSuite("GUI")]
