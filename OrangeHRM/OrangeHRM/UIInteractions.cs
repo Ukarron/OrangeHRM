@@ -44,7 +44,7 @@ namespace OrangeHRM
             Actions.MoveToElement(_driver.FindElement(element)).Perform();
         }
 
-        private WebDriverWait Wait
+        public WebDriverWait Wait
         {
             get
             {
@@ -56,7 +56,7 @@ namespace OrangeHRM
             }
         }
 
-        private Actions Actions
+        public Actions Actions
         {
             get
             {

@@ -1,12 +1,14 @@
 ﻿using Allure.Commons.Model;
 using Allure.NUnit.Attributes;
 using NUnit.Framework;
+using OrangeHRM.Pages;
 using OrangeHRM.Tools;
+using System.Threading;
 
 namespace OrangeHRMTests
 {
     [TestFixture]
-    [AllureSuite("Pass")]
+    [AllureSuite("GUI")]
     [Parallelizable]
     public class CreateUser : BaseTest
     {
@@ -21,6 +23,11 @@ namespace OrangeHRMTests
             Page.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "User Management", "Users");
 
             Page.UsersPage.ClickAddButton();
+
+            Page.AddUserPage.Select(UserRole.Admin);
+            Page.AddUserPage.Select(UserStatus.Disabled);
+
+            Thread.Sleep(3000);
         }
     }
 }

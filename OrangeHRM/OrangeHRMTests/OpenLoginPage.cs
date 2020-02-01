@@ -6,7 +6,7 @@ using OrangeHRM.Tools;
 namespace OrangeHRMTests
 {
     [TestFixture]
-    [AllureSuite("Pass")]
+    [AllureSuite("GUI")]
     [Parallelizable]
     public class OpenLoginPage : BaseTest
     {

@@ -11,10 +11,10 @@ namespace OrangeHRMTests
     [SetUpFixture]
     public abstract class BaseTest : AllureReport
     {
-        private Pages _pages;
+        private AppManager _pages;
         private Browser _browser = new Browser();
 
-        protected Pages Page => _pages ?? (_pages = new Pages(_browser.Driver));
+        protected AppManager Page => _pages ?? (_pages = new AppManager(_browser.Driver));
 
         [OneTimeSetUp]
         public void OneTimeSetUpTests()

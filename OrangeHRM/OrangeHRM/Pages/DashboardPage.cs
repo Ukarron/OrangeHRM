@@ -8,7 +8,7 @@ namespace OrangeHRM.Pages
 {
     public class DashboardPage : MainPage<DashboardPage_Selectors>
     {
-        public DashboardPage(Pages p) 
+        public DashboardPage(AppManager p) 
             : base(p, new DashboardPage_Selectors()) {}
     }
 

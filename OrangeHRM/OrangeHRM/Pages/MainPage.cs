@@ -8,21 +8,21 @@ namespace OrangeHRM.Pages
         private PersonalMenu _personalMenu;
         private Menu _menu;
 
-        public MainPage(Pages p, T type) 
+        public MainPage(AppManager p, T type) 
             : base(p, type){}
 
         public void ClickMarketplaceButton()
         {
-            page.UIInteraction.Click(Selectors.MarketplaceButton);
+            app.UIInteraction.Click(Selectors.MarketplaceButton);
         }
 
         public void ClickLogo()
         {
-            page.UIInteraction.Click(Selectors.OrangeHRMLogo);
+            app.UIInteraction.Click(Selectors.OrangeHRMLogo);
         }
 
-        public PersonalMenu PersonalMenu => _personalMenu = new PersonalMenu(this.page);
-        public Menu Menu => _menu = new Menu(this.page);
+        public PersonalMenu PersonalMenu => _personalMenu = new PersonalMenu(this.app);
+        public Menu Menu => _menu = new Menu(this.app);
     }
 
     public class MainPage_Selectors

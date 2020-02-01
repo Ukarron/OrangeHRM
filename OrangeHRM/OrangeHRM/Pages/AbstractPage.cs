@@ -1,15 +1,13 @@
-﻿using Allure.Commons;
-
-namespace OrangeHRM.Pages
+﻿namespace OrangeHRM.Pages
 {
     public abstract class AbstractPage<T>
     {
-        protected Pages page;
+        protected AppManager app;
         private T _selectors;
 
-        public AbstractPage(Pages p, T type)
+        public AbstractPage(AppManager a, T type)
         {
-            page = p;
+            app = a;
             _selectors = type;
         }
 

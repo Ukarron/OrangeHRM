@@ -6,22 +6,22 @@ namespace OrangeHRM.Pages
 {
     public class LoginPage : AbstractPage<LoginPage_Selectors>
     {
-        public LoginPage(Pages p) 
+        public LoginPage(AppManager p) 
             : base(p, new LoginPage_Selectors()){}
 
         public void EnterUserName(string username)
         {
-            page.UIInteraction.EnterText(Selectors.UsernameField, username);
+            app.UIInteraction.EnterText(Selectors.UsernameField, username);
         }
 
         public void EnterPassword(string password)
         {
-            page.UIInteraction.EnterText(Selectors.PasswordField, password);
+            app.UIInteraction.EnterText(Selectors.PasswordField, password);
         }
 
         public void ClickLoginButton()
         {
-            page.UIInteraction.Click(Selectors.LoginButton);
+            app.UIInteraction.Click(Selectors.LoginButton);
         }
 
         [AllureStep]
@@ -29,11 +29,11 @@ namespace OrangeHRM.Pages
         {
             if (url == null)
             {
-                page.UrlManager.OpenUrl(RunConfiguration.Url);
+                app.UrlManager.OpenUrl(RunConfiguration.Url);
             }
             else
             {
-                page.UrlManager.OpenUrl(url);
+                app.UrlManager.OpenUrl(url);
             }   
 
             EnterUserName(username);

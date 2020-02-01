@@ -4,12 +4,12 @@ namespace OrangeHRM.Pages
 {
     public class UsersPage : AbstractPage<UsersPage_Selectors>
     {
-        public UsersPage(Pages p) 
+        public UsersPage(AppManager p) 
             : base(p, new UsersPage_Selectors()){}
 
         public void ClickAddButton()
         {
-            page.UIInteraction.Click(Selectors.AddButton);
+            app.UIInteraction.Click(Selectors.AddButton);
         }
     }
 
