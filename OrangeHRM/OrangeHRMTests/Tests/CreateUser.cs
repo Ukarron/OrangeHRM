@@ -22,11 +22,8 @@ namespace OrangeHRMTests.Tests
 
             Page.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "User Management", "Users");
 
-            Page.UsersPage.ClickAddButton();
-
-            Page.AddUserPage.Select(UserRole.Admin);
-            Page.AddUserPage.Select(UserStatus.Disabled);
-
+            Page.SystemUsersPage.AddUser(UserRole.Admin, "", UserStatus.Enabled, "");
+            
             Thread.Sleep(3000);
         }
     }

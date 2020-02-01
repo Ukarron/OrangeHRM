@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
-using OrangeHRM.Pages.Components;
 
-namespace OrangeHRM.Pages
+namespace OrangeHRM.Pages.Components
 {
     public abstract class MainPage<T> : AbstractPage<T> where T : MainPage_Selectors
     {

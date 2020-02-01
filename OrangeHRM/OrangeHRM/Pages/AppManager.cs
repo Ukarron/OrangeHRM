@@ -10,7 +10,7 @@ namespace OrangeHRM.Pages
         private AddUserPage _addUserPage;
         private DashboardPage _dashboardPage;
         private LoginPage _loginPage;        
-        private SystemUsersPage _usersPage;
+        private SystemUsersPage _systemUsersPage;
 
         private UrlManager _urlManager;
         private UIInteraction _uiInteraction;                
@@ -28,6 +28,6 @@ namespace OrangeHRM.Pages
         public AddUserPage AddUserPage => _addUserPage = new AddUserPage(this);
         public DashboardPage DashboardPage => _dashboardPage = new DashboardPage(this);
         public LoginPage LoginPage => _loginPage = new LoginPage(this);        
-        public SystemUsersPage UsersPage => _usersPage = new SystemUsersPage(this);        
+        public SystemUsersPage SystemUsersPage => _systemUsersPage = new SystemUsersPage(this);        
     }
 }

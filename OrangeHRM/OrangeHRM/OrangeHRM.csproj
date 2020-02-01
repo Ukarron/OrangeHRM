@@ -108,7 +108,7 @@
     <Compile Include="UIInteractions.cs" />
     <Compile Include="Pages\SystemUsersPage.cs" />
     <Compile Include="Browser.cs" />
-    <Compile Include="Pages\MainPage.cs" />
+    <Compile Include="Pages\Components\MainPage.cs" />
     <Compile Include="Pages\Components\Menu.cs" />
     <Compile Include="Pages\AppManager.cs" />
     <Compile Include="Pages\LoginPage.cs" />
