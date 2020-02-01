@@ -106,7 +106,7 @@
     <Compile Include="Pages\Components\DropDownHandler.cs" />
     <Compile Include="Pages\DashboardPage.cs" />
     <Compile Include="UIInteractions.cs" />
-    <Compile Include="Pages\UsersPage.cs" />
+    <Compile Include="Pages\SystemUsersPage.cs" />
     <Compile Include="Browser.cs" />
     <Compile Include="Pages\MainPage.cs" />
     <Compile Include="Pages\Components\Menu.cs" />

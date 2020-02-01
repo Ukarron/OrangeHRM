@@ -7,10 +7,11 @@ namespace OrangeHRM
 {
     public class UIInteraction
     {
+        private const int DEFAULT_WAIT_TIME = 20;
+
         private IWebDriver _driver;
         private WebDriverWait _webDriverWait;
         private Actions _actions;
-        private int _defaultWaitTime = 20;
 
         public UIInteraction(IWebDriver driver)
         {
@@ -50,7 +51,7 @@ namespace OrangeHRM
             {
                 if (_webDriverWait == null)
                 {
-                    _webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(_defaultWaitTime));
+                    _webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(DEFAULT_WAIT_TIME));
                 }
                 return _webDriverWait;
             }
