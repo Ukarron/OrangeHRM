@@ -3,16 +3,14 @@ using OpenQA.Selenium.Support.UI;
 
 namespace OrangeHRM.Pages.Components
 {
-    public class DropDownHandler
+    public class DropDown : AbstractPage<DropDown_Selectors>
     {
-        private IWebDriver _driver;
         private SelectElement _select;
-        private By _element;
 
-        public DropDownHandler(IWebDriver driver, By element)
+        public DropDown(AppManager a, By option) 
+            : base(a, new DropDown_Selectors())
         {
-            _driver = driver;
-            _element = element;
+            Selectors.Option = option;
         }
 
         public void SelectByText(string text, bool partialMatch = false)
@@ -30,12 +28,11 @@ namespace OrangeHRM.Pages.Components
             Select.SelectByIndex(index);
         }
 
-        public SelectElement Select
-        {
-            get
-            {
-                return _select = new SelectElement(_driver.FindElement(_element));
-            }
-        }
+        public SelectElement Select => _select = new SelectElement(app.Driver.FindElement(Selectors.Option));
+    }
+
+    public class DropDown_Selectors
+    {
+        public By Option { get; set; }
     }
 }

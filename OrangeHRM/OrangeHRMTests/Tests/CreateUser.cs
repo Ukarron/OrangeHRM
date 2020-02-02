@@ -22,9 +22,7 @@ namespace OrangeHRMTests.Tests
 
             Page.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "User Management", "Users");
 
-            Page.SystemUsersPage.AddUser(UserRole.Admin, "", UserStatus.Enabled, "");
-            
-            Thread.Sleep(3000);
+            Page.SystemUsersPage.AddUser(UserRole.Admin, "sadsdf", UserStatus.Enabled, "sdfsdfsdf");
         }
     }
 }

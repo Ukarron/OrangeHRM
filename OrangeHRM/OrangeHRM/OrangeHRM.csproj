@@ -103,7 +103,7 @@
   <ItemGroup>
     <Compile Include="Pages\AbstractPage.cs" />
     <Compile Include="Pages\AddUserPage.cs" />
-    <Compile Include="Pages\Components\DropDownHandler.cs" />
+    <Compile Include="Pages\Components\DropDown.cs" />
     <Compile Include="Pages\DashboardPage.cs" />
     <Compile Include="UIInteractions.cs" />
     <Compile Include="Pages\SystemUsersPage.cs" />

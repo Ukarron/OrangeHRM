@@ -59,8 +59,8 @@ namespace OrangeHRM.Pages
             return this;
         }
 
-        private DropDownHandler UserRoleDropDown => new DropDownHandler(app.Driver, Selectors.UserRoleDropDown);
-        private DropDownHandler StatusDropDown => new DropDownHandler(app.Driver, Selectors.StatusDropDown);
+        private DropDown UserRoleDropDown => new DropDown(this.app, Selectors.UserRoleDropDown);
+        private DropDown StatusDropDown => new DropDown(this.app, Selectors.StatusDropDown);
     }
 
     public class AddUserPage_Selectors : MainPage_Selectors
