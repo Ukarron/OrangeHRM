@@ -40,6 +40,10 @@
       <HintPath>..\packages\Noksa.NUnit.Allure.3.0.6\lib\net45\Allure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Faker.NET45, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Faker.Net.1.1.1\lib\net452\Faker.NET45.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MimeTypesMap, Version=1.0.3.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
       <HintPath>..\packages\MimeTypesMap.1.0.3\lib\net45\MimeTypesMap.dll</HintPath>
       <Private>True</Private>
@@ -101,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeBits\PasswordGenerator.cs" />
     <Compile Include="Pages\AbstractPage.cs" />
     <Compile Include="Pages\AddUserPage.cs" />
     <Compile Include="Pages\Components\DropDown.cs" />

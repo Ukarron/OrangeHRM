@@ -1,9 +1,9 @@
 ﻿using Allure.Commons.Model;
 using Allure.NUnit.Attributes;
+using CodeBits;
 using NUnit.Framework;
 using OrangeHRM.Pages;
 using OrangeHRM.Tools;
-using System.Threading;
 
 namespace OrangeHRMTests.Tests
 {
@@ -12,6 +12,9 @@ namespace OrangeHRMTests.Tests
     [Parallelizable]
     public class CreateUser : BaseTest
     {
+        private string _password = PasswordGenerator.Generate(12, PasswordCharacters.All);
+        private string _username = Faker.Internet.UserName();
+
         [Test(Description = "Create new user")]
         [AllureSeverity(SeverityLevel.Normal)]
         [AllureTag("Regression")]
@@ -22,7 +25,7 @@ namespace OrangeHRMTests.Tests
 
             Page.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "User Management", "Users");
 
-            Page.SystemUsersPage.AddUser(UserRole.Admin, "sadsdf", UserStatus.Enabled, "sdfsdfsdf");
+            Page.SystemUsersPage.AddUser(UserRole.Admin, _username, UserStatus.Enabled, _password);
         }
     }
 }
