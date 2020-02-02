@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Allure.NUnit.Attributes;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
@@ -19,13 +20,14 @@ namespace OrangeHRM
             {
                 if (_driver == null)
                 {
-                    _driver = Start();
+                    _driver = StartBrowser();
                 }
                 return _driver;
             }
         }
 
-        public IWebDriver Start()
+        [AllureStep]
+        public IWebDriver StartBrowser()
         {
             var browser = RunConfiguration.Browser;
 
@@ -52,7 +54,8 @@ namespace OrangeHRM
             return _driver;
         }
 
-        public void Close()
+        [AllureStep]
+        public void CloseBrowser()
         {
             _driver.Quit();
             _driver = null;

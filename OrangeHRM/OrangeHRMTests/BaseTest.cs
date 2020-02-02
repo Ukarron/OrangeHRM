@@ -34,7 +34,7 @@ namespace OrangeHRMTests
                 AllureLifecycle.Instance.AddAttachment(Path.Combine(TestContext.CurrentContext.WorkDirectory, "Image.png"));
             }
 
-            _browser.Close();
+            _browser.CloseBrowser();
         }
     }
 }
