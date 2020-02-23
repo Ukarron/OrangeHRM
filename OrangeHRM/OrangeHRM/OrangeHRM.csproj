@@ -122,6 +122,7 @@
     <Compile Include="Tools\EnumDescription.cs" />
     <Compile Include="Tools\RunConfiguration.cs" />
     <Compile Include="Tools\UrlManager.cs" />
+    <Compile Include="Waiters.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="allureConfig.json" />

@@ -36,7 +36,7 @@ namespace OrangeHRM.Pages
 
         private void WaitForSuccessfullySavedMessage()
         {
-            app.UIInteraction.Wait.Until(ExpectedConditions.ElementIsVisible(Selectors.SuccessfullySavedMessage));
+            app.Waiter.Wait.Until(ExpectedConditions.ElementIsVisible(Selectors.SuccessfullySavedMessage));
         }
 
         public string GetMessage()
