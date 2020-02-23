@@ -36,7 +36,10 @@ namespace OrangeHRM
         public string GetText(By element)
         {
             Wait.Until(ExpectedConditions.ElementIsVisible(element));
-            return _driver.FindElement(element).Text;
+
+            var parent = _driver.FindElement(element);
+            var child = _driver.FindElement(element);
+            return parent.Text.Replace(child.Text, "").Trim();
         }
 
         public void MouseOver(By element)

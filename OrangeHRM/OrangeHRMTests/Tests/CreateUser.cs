@@ -12,8 +12,9 @@ namespace OrangeHRMTests.Tests
     [Parallelizable]
     public class CreateUser : BaseTest
     {
-        private string _password = PasswordGenerator.Generate(12, PasswordCharacters.All);
         private string _username = Faker.Internet.UserName();
+        private string _password = PasswordGenerator.Generate(12, PasswordCharacters.All);        
+        private string _employeeName = "Fiona Grace";
 
         [Test(Description = "Create new user")]
         [AllureSeverity(SeverityLevel.Normal)]
@@ -25,7 +26,11 @@ namespace OrangeHRMTests.Tests
 
             Page.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "User Management", "Users");
 
-            Page.SystemUsersPage.AddUser(UserRole.Admin, _username, UserStatus.Enabled, _password);
+            Page.SystemUsersPage.AddUser(UserRole.Admin, _employeeName, _username, UserStatus.Enabled, _password);
+
+            var expectedMessage = "Successfully Saved";
+
+            Assert.AreEqual(expectedMessage, Page.SystemUsersPage.GetMessage());
         }
     }
 }

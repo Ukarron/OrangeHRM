@@ -18,6 +18,20 @@ namespace OrangeHRM.Pages
         }
 
         [AllureStep]
+        public AddUserPage EnterEmployeeName(string employeeName)
+        {
+            app.UIInteraction.EnterText(Selectors.EmployeeNameField, employeeName);
+            return this;
+        }
+
+        [AllureStep]
+        public AddUserPage Select(string employee)
+        {
+            app.UIInteraction.Click(Selectors.EmployeeName);
+            return this;
+        }
+
+        [AllureStep]
         public AddUserPage EnterUsername(string username)
         {
             app.UIInteraction.EnterText(Selectors.UsernameField, username);
@@ -67,6 +81,7 @@ namespace OrangeHRM.Pages
     {
         public readonly By UserRoleDropDown = By.Id("systemUser_userType");
         public readonly By EmployeeNameField = By.Id("systemUser_employeeName_empName");
+        public readonly By EmployeeName = By.XPath("//*[@class='ac_results']//li");
         public readonly By UsernameField = By.Id("systemUser_userName");
         public readonly By StatusDropDown = By.Id("systemUser_status");
         public readonly By PasswordField = By.Id("systemUser_password");
