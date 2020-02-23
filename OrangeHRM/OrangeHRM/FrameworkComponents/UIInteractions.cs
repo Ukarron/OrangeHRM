@@ -6,6 +6,7 @@ namespace OrangeHRM
     public class UIInteraction
     {
         private IWebDriver _driver;
+        private IJavaScriptExecutor _executor;
         private Actions _actions;
         private Waiters _waiter;
 
@@ -13,6 +14,13 @@ namespace OrangeHRM
         {
             _driver = driver;
             _waiter = new Waiters(_driver);
+        }
+
+        public void JSClick(By element)
+        {
+            _waiter.WaitForVisibleDisplayedClickable(element);
+
+            JavaScriptExecutor.ExecuteScript("arguments[0].click();", element);
         }
 
         public void Click(By element)
@@ -54,6 +62,18 @@ namespace OrangeHRM
                     _actions = new Actions(_driver);
                 }
                 return _actions;
+            }
+        }
+
+        public IJavaScriptExecutor JavaScriptExecutor
+        {
+            get
+            {
+                if (_executor == null)
+                {
+                    _executor = (IJavaScriptExecutor)_driver;
+                }
+                return _executor;
             }
         }
     }
