@@ -31,7 +31,7 @@ namespace OrangeHRMTests.Tests
             var expectedUsername = _username;
             var actualUsername = AppManager.UIInteraction.GetText(AppManager.SystemUsersPage.Selectors.GetUsername(_username));
 
-            Assert.AreEqual(expectedUsername, actualUsername);
+            Assert.AreEqual(expectedUsername, actualUsername, $"FAIL: {expectedUsername} was not found!");
         }
     }
 }
