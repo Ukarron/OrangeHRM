@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace OrangeHRM.Pages.Components
+namespace OrangeHRM.Pages.PageComponents
 {
     public class PersonalMenu : AbstractPage<PersonalMenu_Selectors>
     {

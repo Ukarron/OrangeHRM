@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using System;
 using System.ComponentModel;
 
-namespace OrangeHRM.Pages.Components
+namespace OrangeHRM.Pages.PageComponents
 {
     public class Menu : AbstractPage<Menu_Selectors>
     {

@@ -108,21 +108,21 @@
     <Compile Include="CodeBits\PasswordGenerator.cs" />
     <Compile Include="Pages\AbstractPage.cs" />
     <Compile Include="Pages\AddUserPage.cs" />
-    <Compile Include="Pages\Components\DropDown.cs" />
+    <Compile Include="Pages\PageComponents\DropDown.cs" />
     <Compile Include="Pages\DashboardPage.cs" />
-    <Compile Include="UIInteractions.cs" />
+    <Compile Include="FrameworkComponents\UIInteractions.cs" />
     <Compile Include="Pages\SystemUsersPage.cs" />
-    <Compile Include="Browser.cs" />
-    <Compile Include="Pages\Components\MainPage.cs" />
-    <Compile Include="Pages\Components\Menu.cs" />
+    <Compile Include="FrameworkComponents\Browser.cs" />
+    <Compile Include="Pages\PageComponents\MainPage.cs" />
+    <Compile Include="Pages\PageComponents\Menu.cs" />
     <Compile Include="Pages\AppManager.cs" />
     <Compile Include="Pages\LoginPage.cs" />
-    <Compile Include="Pages\Components\PersonalMenu.cs" />
+    <Compile Include="Pages\PageComponents\PersonalMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\EnumDescription.cs" />
     <Compile Include="Tools\RunConfiguration.cs" />
     <Compile Include="Tools\UrlManager.cs" />
-    <Compile Include="Waiters.cs" />
+    <Compile Include="FrameworkComponents\Waiters.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="allureConfig.json" />

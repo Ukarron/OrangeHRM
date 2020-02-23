@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace OrangeHRM.Pages.Components
+namespace OrangeHRM.Pages.PageComponents
 {
     public class DropDown : AbstractPage<DropDown_Selectors>
     {
