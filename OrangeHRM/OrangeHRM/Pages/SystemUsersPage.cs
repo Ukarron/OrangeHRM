@@ -1,6 +1,5 @@
 ﻿using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
 namespace OrangeHRM.Pages
 {
@@ -36,7 +35,7 @@ namespace OrangeHRM.Pages
 
         private void WaitForSuccessfullySavedMessage()
         {
-            app.Waiter.Wait.Until(ExpectedConditions.ElementIsVisible(Selectors.SuccessfullySavedMessage));
+            app.Waiter.WaitForElementIsVisible(Selectors.SuccessfullySavedMessage);
         }
 
         public string GetMessage()

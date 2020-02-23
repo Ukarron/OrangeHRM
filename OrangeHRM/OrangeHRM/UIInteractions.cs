@@ -17,7 +17,7 @@ namespace OrangeHRM
 
         public void Click(By element)
         {
-            _waiter.WaitForElementIsVisible(element);
+            _waiter.WaitForVisibleDisplayedClickable(element);
 
             _driver.FindElement(element).Click();
         }

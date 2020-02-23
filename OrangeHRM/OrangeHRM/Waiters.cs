@@ -27,6 +27,23 @@ namespace OrangeHRM
             _webDriverWait.Until(ExpectedConditions.ElementIsVisible(element));
         }
 
+        public void WaitForElementToBeClickable(By element)
+        {
+            _webDriverWait.Until(ExpectedConditions.ElementToBeClickable(element));
+        }
+
+        public void WaitForElementToBeDisplayed(By element)
+        {
+            _webDriverWait.Until(d => _driver.FindElement(element).Displayed);
+        }
+
+        public void WaitForVisibleDisplayedClickable(By element)
+        {
+            WaitForElementIsVisible(element);
+            WaitForElementToBeDisplayed(element);
+            WaitForElementToBeClickable(element);
+        }
+
         public WebDriverWait Wait
         {
             get
