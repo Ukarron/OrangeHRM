@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Threading;
 
 namespace OrangeHRM
 {
@@ -42,6 +43,11 @@ namespace OrangeHRM
             WaitForElementIsVisible(element);
             WaitForElementToBeDisplayed(element);
             WaitForElementToBeClickable(element);
+        }
+
+        public void JustWait(int waitTime)
+        {
+            Thread.Sleep(waitTime);
         }
 
         public WebDriverWait Wait

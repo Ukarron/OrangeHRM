@@ -1,5 +1,8 @@
 ﻿using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using OrangeHRM.Tools;
+using System.Collections.Generic;
 
 namespace OrangeHRM.Pages
 {
@@ -13,7 +16,7 @@ namespace OrangeHRM.Pages
         [AllureStep]
         public void ClickAddButton()
         {
-            app.UIInteraction.Click(Selectors.AddButton);
+            appManager.UIInteraction.Click(Selectors.AddButton);
         }
 
         [AllureStep]
@@ -35,21 +38,23 @@ namespace OrangeHRM.Pages
 
         private void WaitForSuccessfullySavedMessage()
         {
-            app.Waiter.WaitForElementIsVisible(Selectors.SuccessfullySavedMessage);
+            appManager.Waiter.WaitForElementIsVisible(Selectors.SuccessfullySavedMessage);
         }
 
         public string GetMessage()
         {
-            var message = app.UIInteraction.GetText(Selectors.SuccessfullySavedMessage).Trim();
+            var message = appManager.UIInteraction.GetText(Selectors.SuccessfullySavedMessage).Trim();
             return message;
         }
 
-        public AddUserPage AddUserPage => _addUserPage = new AddUserPage(this.app);
+        public AddUserPage AddUserPage => _addUserPage = new AddUserPage(this.appManager);
     }
 
     public class SystemUsersPage_Selectors
     {
         public readonly By AddButton = By.Id("btnAdd");
         public readonly By SuccessfullySavedMessage = By.CssSelector(".message.success.fadable");
+
+        public By GetUsername(string username) => By.XPath($"//table[@id='resultTable']//a[text()='{username}']");
     }
 }

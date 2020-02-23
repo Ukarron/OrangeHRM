@@ -28,7 +28,7 @@ namespace OrangeHRM.Pages.PageComponents
             Select.SelectByIndex(index);
         }
 
-        public SelectElement Select => _select = new SelectElement(app.Driver.FindElement(Selectors.Option));
+        public SelectElement Select => _select = new SelectElement(appManager.Driver.FindElement(Selectors.Option));
     }
 
     public class DropDown_Selectors

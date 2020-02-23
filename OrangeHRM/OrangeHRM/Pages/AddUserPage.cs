@@ -20,21 +20,21 @@ namespace OrangeHRM.Pages
         [AllureStep]
         public AddUserPage EnterEmployeeName(string employeeName)
         {
-            app.UIInteraction.EnterText(Selectors.EmployeeNameField, employeeName);
+            appManager.UIInteraction.EnterText(Selectors.EmployeeNameField, employeeName);
             return this;
         }
 
         [AllureStep]
         public AddUserPage Select(string employee)
         {
-            app.UIInteraction.Click(Selectors.EmployeeName);
+            appManager.UIInteraction.Click(Selectors.EmployeeName);
             return this;
         }
 
         [AllureStep]
         public AddUserPage EnterUsername(string username)
         {
-            app.UIInteraction.EnterText(Selectors.UsernameField, username);
+            appManager.UIInteraction.EnterText(Selectors.UsernameField, username);
             return this;
         }
 
@@ -48,33 +48,33 @@ namespace OrangeHRM.Pages
         [AllureStep]
         public AddUserPage EnterPassword(string password)
         {
-            app.UIInteraction.EnterText(Selectors.PasswordField, password);
+            appManager.UIInteraction.EnterText(Selectors.PasswordField, password);
             return this;
         }
 
         [AllureStep]
         public AddUserPage SubmitPassword(string password)
         {
-            app.UIInteraction.EnterText(Selectors.ConfirmPasswordField, password);
+            appManager.UIInteraction.EnterText(Selectors.ConfirmPasswordField, password);
             return this;
         }
 
         [AllureStep]
         public AddUserPage ClickSave()
         {
-            app.UIInteraction.Click(Selectors.SaveButton);
+            appManager.UIInteraction.Click(Selectors.SaveButton);
             return this;
         }
 
         [AllureStep]
         public AddUserPage ClickCancel()
         {
-            app.UIInteraction.Click(Selectors.CancelButton);
+            appManager.UIInteraction.Click(Selectors.CancelButton);
             return this;
         }
 
-        private DropDown UserRoleDropDown => new DropDown(this.app, Selectors.UserRoleDropDown);
-        private DropDown StatusDropDown => new DropDown(this.app, Selectors.StatusDropDown);
+        private DropDown UserRoleDropDown => new DropDown(this.appManager, Selectors.UserRoleDropDown);
+        private DropDown StatusDropDown => new DropDown(this.appManager, Selectors.StatusDropDown);
     }
 
     public class AddUserPage_Selectors : MainPage_Selectors

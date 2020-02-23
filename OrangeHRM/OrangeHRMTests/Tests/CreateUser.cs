@@ -22,15 +22,16 @@ namespace OrangeHRMTests.Tests
         [AllureFeature("Users")]
         public void CreateUserTest()
         {
-            Page.LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
+            AppManager.LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
 
-            Page.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "User Management", "Users");
+            AppManager.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "User Management", "Users");
 
-            Page.SystemUsersPage.AddUser(UserRole.Admin, _employeeName, _username, UserStatus.Enabled, _password);
+            AppManager.SystemUsersPage.AddUser(UserRole.Admin, _employeeName, _username, UserStatus.Enabled, _password);
 
-            var expectedMessage = "Successfully Saved";
+            var expectedUsername = _username;
+            var actualUsername = AppManager.UIInteraction.GetText(AppManager.SystemUsersPage.Selectors.GetUsername(_username));
 
-            Assert.AreEqual(expectedMessage, Page.SystemUsersPage.GetMessage());
+            Assert.AreEqual(expectedUsername, actualUsername);
         }
     }
 }

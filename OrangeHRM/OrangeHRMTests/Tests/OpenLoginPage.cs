@@ -16,11 +16,11 @@ namespace OrangeHRMTests.Tests
         [AllureFeature("Login")]
         public void OpenLoginPageTest()
         {
-            Page.LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
+            AppManager.LoginPage.Login(RunConfiguration.Username, RunConfiguration.Password);
 
             var expectedWelcomeText = "Welcome " + RunConfiguration.Username;
 
-            Assert.AreEqual(expectedWelcomeText, Page.DashboardPage.PersonalMenu.GetWelcomeText());
+            Assert.AreEqual(expectedWelcomeText, AppManager.DashboardPage.PersonalMenu.GetWelcomeText());
         }
     }
 }

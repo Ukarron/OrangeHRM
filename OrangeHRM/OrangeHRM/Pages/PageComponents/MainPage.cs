@@ -12,16 +12,16 @@ namespace OrangeHRM.Pages.PageComponents
 
         public void ClickMarketplaceButton()
         {
-            app.UIInteraction.Click(Selectors.MarketplaceButton);
+            appManager.UIInteraction.Click(Selectors.MarketplaceButton);
         }
 
         public void ClickLogo()
         {
-            app.UIInteraction.Click(Selectors.OrangeHRMLogo);
+            appManager.UIInteraction.Click(Selectors.OrangeHRMLogo);
         }
 
-        public PersonalMenu PersonalMenu => _personalMenu = new PersonalMenu(this.app);
-        public Menu Menu => _menu = new Menu(this.app);
+        public PersonalMenu PersonalMenu => _personalMenu = new PersonalMenu(this.appManager);
+        public Menu Menu => _menu = new Menu(this.appManager);
     }
 
     public class MainPage_Selectors

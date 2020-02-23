@@ -14,7 +14,7 @@ namespace OrangeHRMTests
         private AppManager _appManager;
         private Browser _browser = new Browser();
 
-        protected AppManager Page => _appManager ?? (_appManager = new AppManager(_browser.Driver));
+        protected AppManager AppManager => _appManager ?? (_appManager = new AppManager(_browser.Driver));
 
         [OneTimeSetUp]
         public void OneTimeSetUpTests()

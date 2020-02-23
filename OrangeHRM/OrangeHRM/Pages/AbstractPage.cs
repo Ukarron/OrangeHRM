@@ -2,12 +2,12 @@
 {
     public abstract class AbstractPage<T>
     {
-        protected AppManager app;
+        protected AppManager appManager;
         private T _selectors;
 
         public AbstractPage(AppManager a, T type)
         {
-            app = a;
+            appManager = a;
             _selectors = type;
         }
 

@@ -15,5 +15,10 @@ namespace OrangeHRM.Tools
         {
             _driver.Navigate().GoToUrl(url);
         }
+
+        public static string UsersPage()
+        {
+            return "https://opensource-demo.orangehrmlive.com/index.php/admin/viewSystemUsers";
+        }
     }
 }

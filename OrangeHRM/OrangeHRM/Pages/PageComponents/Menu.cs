@@ -12,12 +12,12 @@ namespace OrangeHRM.Pages.PageComponents
 
         public void SelectItem(string item)
         {
-            app.UIInteraction.Click(Selectors.FirstLevelMenu(item));
+            appManager.UIInteraction.Click(Selectors.FirstLevelMenu(item));
         }
 
         public void MouseOverItem(string item)
         {
-            app.UIInteraction.MouseOver(Selectors.FirstLevelMenu(item));
+            appManager.UIInteraction.MouseOver(Selectors.FirstLevelMenu(item));
         }
 
         [AllureStep]
@@ -46,20 +46,20 @@ namespace OrangeHRM.Pages.PageComponents
 
         private void FindFirstLevelItem(string item)
         {
-            app.UIInteraction.Click(Selectors.FirstLevelMenu(item));
+            appManager.UIInteraction.Click(Selectors.FirstLevelMenu(item));
         }
 
         private void FindSecondLevelItem(params string[] itemNames)
         {
-            app.UIInteraction.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
-            app.UIInteraction.Click(Selectors.SecondLevelMenu(itemNames[1]));
+            appManager.UIInteraction.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
+            appManager.UIInteraction.Click(Selectors.SecondLevelMenu(itemNames[1]));
         }
 
         private void FindThirdLevelItem(params string[] itemNames)
         {
-            app.UIInteraction.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
-            app.UIInteraction.MouseOver(Selectors.SecondLevelMenu(itemNames[1]));
-            app.UIInteraction.Click(Selectors.ThirdLevelMenu(itemNames[2]));
+            appManager.UIInteraction.MouseOver(Selectors.FirstLevelMenu(itemNames[0]));
+            appManager.UIInteraction.MouseOver(Selectors.SecondLevelMenu(itemNames[1]));
+            appManager.UIInteraction.Click(Selectors.ThirdLevelMenu(itemNames[2]));
         }
     }
 
