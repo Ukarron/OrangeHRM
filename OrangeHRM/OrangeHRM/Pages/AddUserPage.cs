@@ -1,6 +1,7 @@
 ﻿using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
 using OrangeHRM.FrameworkComponents;
+using OrangeHRM.Models;
 using OrangeHRM.Pages.PageComponents;
 using OrangeHRM.Tools;
 
@@ -89,17 +90,5 @@ namespace OrangeHRM.Pages
         public readonly By ConfirmPasswordField = By.Id("systemUser_confirmPassword");
         public readonly By SaveButton = By.Id("btnSave");
         public readonly By CancelButton = By.Id("btnCancel");
-    }
-
-    public enum UserRole
-    {
-        Admin,
-        ESS
-    }
-
-    public enum UserStatus
-    {
-        Enabled,
-        Disabled
     }
 }

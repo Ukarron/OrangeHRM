@@ -1,6 +1,7 @@
 ﻿using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
 using OrangeHRM.FrameworkComponents;
+using OrangeHRM.Models;
 
 namespace OrangeHRM.Pages
 {
@@ -18,18 +19,18 @@ namespace OrangeHRM.Pages
         }
 
         [AllureStep]
-        public void AddUser(UserRole role, string employeeName, string username, UserStatus status, string password)
+        public void AddUser(UserModel userModel)
         {
             ClickAddButton();
 
             AddUserPage
-                .Select(role)
-                .EnterEmployeeName(employeeName)
-                .Select(employeeName)
-                .EnterUsername(username)
-                .Select(status)
-                .EnterPassword(password)
-                .SubmitPassword(password)
+                .Select(userModel.UserRole)
+                .EnterEmployeeName(userModel.EmployeeName)
+                .Select(userModel.EmployeeName)
+                .EnterUsername(userModel.Username)
+                .Select(userModel.Status)
+                .EnterPassword(userModel.Password)
+                .SubmitPassword(userModel.Password)
                 .ClickSave();
             WaitForSuccessfullySavedMessage();
         }
