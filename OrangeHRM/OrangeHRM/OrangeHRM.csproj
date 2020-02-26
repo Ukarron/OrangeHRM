@@ -115,7 +115,7 @@
     <Compile Include="FrameworkComponents\Browser.cs" />
     <Compile Include="Pages\PageComponents\MainPage.cs" />
     <Compile Include="Pages\PageComponents\Menu.cs" />
-    <Compile Include="Pages\AppManager.cs" />
+    <Compile Include="FrameworkComponents\AppManager.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\PageComponents\PersonalMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
