@@ -2,12 +2,11 @@
 using OpenQA.Selenium;
 using OrangeHRM.FrameworkComponents;
 using OrangeHRM.Models;
-using OrangeHRM.Pages.PageComponents;
 using OrangeHRM.Tools;
 
-namespace OrangeHRM.Pages
+namespace OrangeHRM.Pages.PageComponents.UserPages
 {
-    public class AddUserPage : MainPage<AddUserPage_Selectors>
+    public class AddUserPage : AddPage<AddUserPage_Selectors>
     {
         public AddUserPage(AppManager p) 
             : base(p, new AddUserPage_Selectors()){}
@@ -62,13 +61,6 @@ namespace OrangeHRM.Pages
         }
 
         [AllureStep]
-        public AddUserPage ClickSave()
-        {
-            appManager.UIInteraction.Click(Selectors.SaveButton);
-            return this;
-        }
-
-        [AllureStep]
         public AddUserPage ClickCancel()
         {
             appManager.UIInteraction.Click(Selectors.CancelButton);
@@ -79,7 +71,7 @@ namespace OrangeHRM.Pages
         private DropDown StatusDropDown => new DropDown(this.appManager, Selectors.StatusDropDown);
     }
 
-    public class AddUserPage_Selectors : MainPage_Selectors
+    public class AddUserPage_Selectors : AddPage_Selectors
     {
         public readonly By UserRoleDropDown = By.Id("systemUser_userType");
         public readonly By EmployeeNameField = By.Id("systemUser_employeeName_empName");
@@ -88,7 +80,6 @@ namespace OrangeHRM.Pages
         public readonly By StatusDropDown = By.Id("systemUser_status");
         public readonly By PasswordField = By.Id("systemUser_password");
         public readonly By ConfirmPasswordField = By.Id("systemUser_confirmPassword");
-        public readonly By SaveButton = By.Id("btnSave");
         public readonly By CancelButton = By.Id("btnCancel");
     }
 }

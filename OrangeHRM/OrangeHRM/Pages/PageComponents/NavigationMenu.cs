@@ -6,9 +6,9 @@ using System.ComponentModel;
 
 namespace OrangeHRM.Pages.PageComponents
 {
-    public class Menu : AbstractPage<Menu_Selectors>
+    public class NavigationMenu : AbstractPage<Menu_Selectors>
     {
-        public Menu(AppManager p) 
+        public NavigationMenu(AppManager p) 
             : base(p, new Menu_Selectors()) {}
 
         public void SelectItem(string item)

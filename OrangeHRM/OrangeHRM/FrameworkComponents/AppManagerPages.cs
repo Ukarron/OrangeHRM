@@ -1,4 +1,5 @@
 ﻿using OrangeHRM.Pages;
+using OrangeHRM.Pages.PageComponents.UserPages;
 
 namespace OrangeHRM.FrameworkComponents
 {

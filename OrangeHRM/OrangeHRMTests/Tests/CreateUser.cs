@@ -1,6 +1,5 @@
 ﻿using Allure.Commons.Model;
 using Allure.NUnit.Attributes;
-using CodeBits;
 using NUnit.Framework;
 using OrangeHRM.Models;
 using OrangeHRM.Tools;

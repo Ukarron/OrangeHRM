@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OrangeHRM.FrameworkComponents;
 using OrangeHRM.Models;
 
-namespace OrangeHRM.Pages
+namespace OrangeHRM.Pages.PageComponents.UserPages
 {
     public class SystemUsersPage : AbstractPage<SystemUsersPage_Selectors>
     {
@@ -30,8 +30,9 @@ namespace OrangeHRM.Pages
                 .EnterUsername(userModel.Username)
                 .Select(userModel.Status)
                 .EnterPassword(userModel.Password)
-                .SubmitPassword(userModel.Password)
-                .ClickSave();
+                .SubmitPassword(userModel.Password);
+            appManager.Waiter.JustWait(500);
+            AddUserPage.ClickSave();
             WaitForSuccessfullySavedMessage();
         }
 

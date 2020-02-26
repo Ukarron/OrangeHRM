@@ -6,7 +6,7 @@ namespace OrangeHRM.Pages.PageComponents
     public abstract class MainPage<T> : AbstractPage<T> where T : MainPage_Selectors
     {
         private PersonalMenu _personalMenu;
-        private Menu _menu;
+        private NavigationMenu _menu;
 
         public MainPage(AppManager p, T type) 
             : base(p, type){}
@@ -22,7 +22,7 @@ namespace OrangeHRM.Pages.PageComponents
         }
 
         public PersonalMenu PersonalMenu => _personalMenu = new PersonalMenu(this.appManager);
-        public Menu Menu => _menu = new Menu(this.appManager);
+        public NavigationMenu Menu => _menu = new NavigationMenu(this.appManager);
     }
 
     public class MainPage_Selectors
