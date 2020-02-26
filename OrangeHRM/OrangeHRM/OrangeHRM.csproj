@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeBits\PasswordGenerator.cs" />
+    <Compile Include="FrameworkComponents\AppManagerPages.cs" />
     <Compile Include="Pages\AbstractPage.cs" />
     <Compile Include="Pages\AddUserPage.cs" />
     <Compile Include="Pages\PageComponents\DropDown.cs" />
@@ -115,7 +116,7 @@
     <Compile Include="FrameworkComponents\Browser.cs" />
     <Compile Include="Pages\PageComponents\MainPage.cs" />
     <Compile Include="Pages\PageComponents\Menu.cs" />
-    <Compile Include="FrameworkComponents\AppManager.cs" />
+    <Compile Include="FrameworkComponents\AppManagerComponents.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\PageComponents\PersonalMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

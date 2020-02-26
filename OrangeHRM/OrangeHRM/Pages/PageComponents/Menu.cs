@@ -1,5 +1,6 @@
 ﻿using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
+using OrangeHRM.FrameworkComponents;
 using System;
 using System.ComponentModel;
 

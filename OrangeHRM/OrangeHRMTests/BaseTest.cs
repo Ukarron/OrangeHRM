@@ -3,7 +3,7 @@ using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OrangeHRM;
-using OrangeHRM.Pages;
+using OrangeHRM.FrameworkComponents;
 using System.IO;
 
 namespace OrangeHRMTests

@@ -1,4 +1,5 @@
-﻿using OrangeHRM.Pages.PageComponents;
+﻿using OrangeHRM.FrameworkComponents;
+using OrangeHRM.Pages.PageComponents;
 
 namespace OrangeHRM.Pages
 {

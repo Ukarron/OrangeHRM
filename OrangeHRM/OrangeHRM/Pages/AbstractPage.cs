@@ -1,4 +1,6 @@
-﻿namespace OrangeHRM.Pages
+﻿using OrangeHRM.FrameworkComponents;
+
+namespace OrangeHRM.Pages
 {
     public abstract class AbstractPage<T>
     {

@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using OrangeHRM.FrameworkComponents;
 
 namespace OrangeHRM.Pages.PageComponents
 {

@@ -1,5 +1,6 @@
 ﻿using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
+using OrangeHRM.FrameworkComponents;
 using OrangeHRM.Tools;
 
 namespace OrangeHRM.Pages
