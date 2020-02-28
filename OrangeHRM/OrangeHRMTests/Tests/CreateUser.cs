@@ -11,7 +11,7 @@ namespace OrangeHRMTests.Tests
     [Parallelizable]
     public class CreateUser : BaseTest
     {
-        private UserDTO _userDTO = new UserDTO("Fiona Grace", UserRole.Admin, UserStatus.Enabled); 
+        private UserDTO _userDTO = new UserDTO(UserRole.Admin, UserStatus.Enabled, "Fiona Grace"); 
 
         [Test(Description = "Create new user")]
         [AllureSeverity(SeverityLevel.Normal)]

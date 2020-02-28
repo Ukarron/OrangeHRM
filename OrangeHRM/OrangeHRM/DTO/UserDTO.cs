@@ -1,4 +1,5 @@
 ﻿using CodeBits;
+using System;
 
 namespace OrangeHRM.DTO
 {
@@ -11,23 +12,46 @@ namespace OrangeHRM.DTO
         public UserRole UserRole { get; set; }
         public UserStatus Status { get; set; }
 
-        public UserDTO(string employeeName, string username, string password, UserRole userRole, UserStatus status)
+        public UserDTO(UserRole userRole, UserStatus status, string employeeName = null, string username = null, string password = null)
         {
-            EmployeeName = employeeName;
-            Username = username;
-            Password = password;
+            if (String.IsNullOrEmpty(employeeName))
+            {
+                GenerateEmployeeName();
+            }
+            else
+            {
+                EmployeeName = employeeName;
+            }
+
+            if (String.IsNullOrEmpty(username))
+            {
+                GenerateUsename();
+            }
+            else
+            {
+                Username = username;
+            }
+
+            if (String.IsNullOrEmpty(password))
+            {
+                GeneratePassword(12, PasswordCharacters.All);
+            }
+            else
+            {
+                Password = password;
+            }
             UserRole = userRole;
             Status = status;
         }
 
-        public UserDTO(string employeeName, UserRole userRole, UserStatus status)
-        {
-            EmployeeName = employeeName;
-            Username = GenerateUsename();
-            Password = GeneratePassword(12, PasswordCharacters.All);
-            UserRole = userRole;
-            Status = status;
-        }
+        //public UserDTO(string employeeName, UserRole userRole, UserStatus status)
+        //{
+        //    EmployeeName = employeeName;
+        //    Username = GenerateUsename();
+        //    Password = GeneratePassword(12, PasswordCharacters.All);
+        //    UserRole = userRole;
+        //    Status = status;
+        //}
 
         public string GenerateEmployeeName()
         {
