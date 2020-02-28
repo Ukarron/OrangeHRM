@@ -1,7 +1,7 @@
 ﻿using Allure.Commons.Model;
 using Allure.NUnit.Attributes;
 using NUnit.Framework;
-using OrangeHRM.Models;
+using OrangeHRM.DTO;
 using OrangeHRM.Tools;
 
 namespace OrangeHRMTests.Tests
@@ -11,7 +11,7 @@ namespace OrangeHRMTests.Tests
     [Parallelizable]
     public class CreateUser : BaseTest
     {
-        private UserModel _userModel = new UserModel("Fiona Grace", UserRole.Admin, UserStatus.Enabled); 
+        private UserDTO _userDTO = new UserDTO("Fiona Grace", UserRole.Admin, UserStatus.Enabled); 
 
         [Test(Description = "Create new user")]
         [AllureSeverity(SeverityLevel.Normal)]
@@ -23,10 +23,10 @@ namespace OrangeHRMTests.Tests
 
             AppManager.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "User Management", "Users");
 
-            AppManager.SystemUsersPage.AddUser(_userModel);
+            AppManager.SystemUsersPage.AddUser(_userDTO);
 
-            var expectedUsername = _userModel.Username;
-            var actualUsername = AppManager.UIInteraction.GetText(AppManager.SystemUsersPage.Selectors.GetUsername(_userModel.Username));
+            var expectedUsername = _userDTO.Username;
+            var actualUsername = AppManager.UIInteraction.GetText(AppManager.SystemUsersPage.Selectors.GetUsername(_userDTO.Username));
 
             Assert.AreEqual(expectedUsername, actualUsername, $"FAIL: {expectedUsername} was not found!");
         }

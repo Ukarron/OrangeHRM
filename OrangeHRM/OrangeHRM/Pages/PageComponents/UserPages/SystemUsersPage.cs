@@ -1,7 +1,7 @@
 ﻿using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
+using OrangeHRM.DTO;
 using OrangeHRM.FrameworkComponents;
-using OrangeHRM.Models;
 
 namespace OrangeHRM.Pages.PageComponents.UserPages
 {
@@ -19,19 +19,19 @@ namespace OrangeHRM.Pages.PageComponents.UserPages
         }
 
         [AllureStep]
-        public void AddUser(UserModel userModel)
+        public void AddUser(UserDTO userDTO)
         {
             ClickAddButton();
 
             AddUserPage
-                .Select(userModel.UserRole)
-                .EnterEmployeeName(userModel.EmployeeName)
-                .Select(userModel.EmployeeName)
-                .EnterUsername(userModel.Username)
-                .Select(userModel.Status)
-                .EnterPassword(userModel.Password)
-                .SubmitPassword(userModel.Password);
-            appManager.Waiter.JustWait(500);
+                .Select(userDTO.UserRole)
+                .EnterEmployeeName(userDTO.EmployeeName)
+                .Select(userDTO.EmployeeName)
+                .EnterUsername(userDTO.Username)
+                .Select(userDTO.Status)
+                .EnterPassword(userDTO.Password)
+                .SubmitPassword(userDTO.Password)
+                .WaitForHelpText();
             AddUserPage.ClickSave();
             WaitForSuccessfullySavedMessage();
         }

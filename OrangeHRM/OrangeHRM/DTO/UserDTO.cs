@@ -1,8 +1,8 @@
 ﻿using CodeBits;
 
-namespace OrangeHRM.Models
+namespace OrangeHRM.DTO
 {
-    public sealed class UserModel
+    public sealed class UserDTO
     {
         public string EmployeeName { get; set; }
         public string Username { get; set; }
@@ -11,7 +11,7 @@ namespace OrangeHRM.Models
         public UserRole UserRole { get; set; }
         public UserStatus Status { get; set; }
 
-        public UserModel(string employeeName, string username, string password, UserRole userRole, UserStatus status)
+        public UserDTO(string employeeName, string username, string password, UserRole userRole, UserStatus status)
         {
             EmployeeName = employeeName;
             Username = username;
@@ -20,7 +20,7 @@ namespace OrangeHRM.Models
             Status = status;
         }
 
-        public UserModel(string employeeName, UserRole userRole, UserStatus status)
+        public UserDTO(string employeeName, UserRole userRole, UserStatus status)
         {
             EmployeeName = employeeName;
             Username = GenerateUsename();

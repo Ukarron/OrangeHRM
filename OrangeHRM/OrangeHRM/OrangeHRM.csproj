@@ -107,7 +107,7 @@
   <ItemGroup>
     <Compile Include="CodeBits\PasswordGenerator.cs" />
     <Compile Include="FrameworkComponents\AppManagerPages.cs" />
-    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Pages\AbstractPage.cs" />
     <Compile Include="Pages\AddEmployeePage.cs" />
     <Compile Include="Pages\PageComponents\UserPages\AddUserPage.cs" />

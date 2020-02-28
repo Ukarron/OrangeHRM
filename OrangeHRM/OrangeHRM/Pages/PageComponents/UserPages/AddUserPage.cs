@@ -1,7 +1,7 @@
 ﻿using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
+using OrangeHRM.DTO;
 using OrangeHRM.FrameworkComponents;
-using OrangeHRM.Models;
 using OrangeHRM.Tools;
 
 namespace OrangeHRM.Pages.PageComponents.UserPages
@@ -67,6 +67,12 @@ namespace OrangeHRM.Pages.PageComponents.UserPages
             return this;
         }
 
+        public AddUserPage WaitForHelpText()
+        {
+            appManager.Waiter.WaitForElementIsVisible(Selectors.HelpText);
+            return this;
+        }
+
         private DropDown UserRoleDropDown => new DropDown(this.appManager, Selectors.UserRoleDropDown);
         private DropDown StatusDropDown => new DropDown(this.appManager, Selectors.StatusDropDown);
     }
@@ -81,5 +87,6 @@ namespace OrangeHRM.Pages.PageComponents.UserPages
         public readonly By PasswordField = By.Id("systemUser_password");
         public readonly By ConfirmPasswordField = By.Id("systemUser_confirmPassword");
         public readonly By CancelButton = By.Id("btnCancel");
+        public readonly By HelpText = By.ClassName("helpText");
     }
 }
