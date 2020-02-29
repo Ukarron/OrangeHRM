@@ -23,6 +23,7 @@ namespace OrangeHRMTests.Tests
 
             AppManager.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("Admin", "User Management", "Users");
 
+            AppManager.SystemUsersPage.ClickAddButton();
             AppManager.SystemUsersPage.AddUser(_userDTO);
 
             var expectedUsername = _userDTO.Username;

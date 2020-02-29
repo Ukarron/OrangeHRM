@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OrangeHRM.DTO;
 using OrangeHRM.FrameworkComponents;
 
-namespace OrangeHRM.Pages.PageComponents.UserPages
+namespace OrangeHRM.Pages.UserPages
 {
     public class SystemUsersPage : AbstractPage<SystemUsersPage_Selectors>
     {
@@ -21,8 +21,6 @@ namespace OrangeHRM.Pages.PageComponents.UserPages
         [AllureStep]
         public void AddUser(UserDTO userDTO)
         {
-            ClickAddButton();
-
             AddUserPage
                 .Select(userDTO.UserRole)
                 .EnterEmployeeName(userDTO.EmployeeName)

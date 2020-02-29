@@ -123,6 +123,7 @@
   <ItemGroup>
     <Compile Include="BaseTest.cs" />
     <Compile Include="CodeBits\PasswordGenerator.cs" />
+    <Compile Include="Tests\CreateEmployee.cs" />
     <Compile Include="Tests\OpenLoginPage.cs" />
     <Compile Include="Tests\CreateUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

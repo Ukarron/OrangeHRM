@@ -109,13 +109,13 @@
     <Compile Include="FrameworkComponents\AppManagerPages.cs" />
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Pages\AbstractPage.cs" />
-    <Compile Include="Pages\AddEmployeePage.cs" />
-    <Compile Include="Pages\PageComponents\UserPages\AddUserPage.cs" />
+    <Compile Include="Pages\EmployeePages\AddEmployeePage.cs" />
+    <Compile Include="Pages\UserPages\AddUserPage.cs" />
     <Compile Include="Pages\PageComponents\AddPage.cs" />
     <Compile Include="Pages\PageComponents\DropDown.cs" />
     <Compile Include="Pages\DashboardPage.cs" />
     <Compile Include="FrameworkComponents\UIInteractions.cs" />
-    <Compile Include="Pages\PageComponents\UserPages\SystemUsersPage.cs" />
+    <Compile Include="Pages\UserPages\SystemUsersPage.cs" />
     <Compile Include="FrameworkComponents\Browser.cs" />
     <Compile Include="Pages\PageComponents\MainPage.cs" />
     <Compile Include="Pages\PageComponents\NavigationMenu.cs" />

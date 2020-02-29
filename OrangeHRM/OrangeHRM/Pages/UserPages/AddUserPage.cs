@@ -2,9 +2,10 @@
 using OpenQA.Selenium;
 using OrangeHRM.DTO;
 using OrangeHRM.FrameworkComponents;
+using OrangeHRM.Pages.PageComponents;
 using OrangeHRM.Tools;
 
-namespace OrangeHRM.Pages.PageComponents.UserPages
+namespace OrangeHRM.Pages.UserPages
 {
     public class AddUserPage : AddPage<AddUserPage_Selectors>
     {

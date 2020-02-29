@@ -30,12 +30,12 @@ namespace OrangeHRM
             _driver.FindElement(element).Click();
         }
 
-        public void EnterText(By element, string text, bool needToclear = false)
+        public void EnterText(By element, string text, bool needToClear = false)
         {
             _waiter.WaitForElementIsVisible(element);
 
             var el = _driver.FindElement(element);
-            if (needToclear)
+            if (needToClear)
                 el.Clear();
             el.SendKeys(text);
         }
@@ -47,10 +47,25 @@ namespace OrangeHRM
             return _driver.FindElement(element).Text;
         }
 
+        public string GetValueText(By element, string attribute)
+        {
+            _waiter.WaitForElementIsVisible(element);
+
+            return _driver.FindElement(element).GetAttribute(attribute);
+        }
+
         public void MouseOver(By element)
         {
             _waiter.WaitForElementIsVisible(element);
             Actions.MoveToElement(_driver.FindElement(element)).Perform();
+        }
+
+        public void UploadFile(By element, string filePath)
+        {
+            var input = _driver.FindElement(element);
+            _waiter.WaitForElementExists(element);
+            input.SendKeys(filePath);
+            input.Submit();
         }
 
         public Actions Actions
