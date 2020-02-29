@@ -44,15 +44,6 @@ namespace OrangeHRM.DTO
             Status = status;
         }
 
-        //public UserDTO(string employeeName, UserRole userRole, UserStatus status)
-        //{
-        //    EmployeeName = employeeName;
-        //    Username = GenerateUsename();
-        //    Password = GeneratePassword(12, PasswordCharacters.All);
-        //    UserRole = userRole;
-        //    Status = status;
-        //}
-
         public string GenerateEmployeeName()
         {
             return EmployeeName = Faker.Name.FullName();
