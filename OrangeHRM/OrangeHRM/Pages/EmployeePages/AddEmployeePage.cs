@@ -1,7 +1,9 @@
 ﻿using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
+using OrangeHRM.DTO;
 using OrangeHRM.FrameworkComponents;
 using OrangeHRM.Pages.PageComponents;
+using OrangeHRM.Tools;
 using System;
 
 namespace OrangeHRM.Pages.EmployeePages
@@ -13,15 +15,16 @@ namespace OrangeHRM.Pages.EmployeePages
         public AddEmployeePage(AppManager p)
             : base(p, new AddEmployeePage_Selectors()) {}
 
-        [AllureStep]
-        public string AddEmployee(string firstName, string lastName, string middleName = null, string id = null, string filePath = null, bool create = false)
+        //[AllureStep]
+        public string AddEmployee(string firstName, string lastName, string middleName = null, string id = null, string filePath = null, bool create = false,
+            UserDTO userDTO = null)
         {
             EnterFirstName(firstName)
                 .EnterLastName(lastName)
                 .EnterMiddleName(middleName)
                 .SetEmployeeId(id)
                 .UploadPhotograph(filePath)
-                .CreateLoginDetails(create);
+                .CreateLoginDetails(create, userDTO);
             EmployeeId = GetEmployeeId();
 
             ClickSave();
@@ -29,21 +32,21 @@ namespace OrangeHRM.Pages.EmployeePages
             return EmployeeId;
         }
 
-        [AllureStep]
+        //[AllureStep]
         public AddEmployeePage EnterFirstName(string firstName)
         {
             appManager.UIInteraction.EnterText(Selectors.FirstNameField, firstName);
             return this;
         }
 
-        [AllureStep]
+        //[AllureStep]
         public AddEmployeePage EnterLastName(string lastName)
         {
             appManager.UIInteraction.EnterText(Selectors.LastNameField, lastName);
             return this;
         }
 
-        [AllureStep]
+        //[AllureStep]
         public AddEmployeePage EnterMiddleName(string middleName = null)
         {
             if (!String.IsNullOrEmpty(middleName))
@@ -51,7 +54,7 @@ namespace OrangeHRM.Pages.EmployeePages
             return this;
         }
 
-        [AllureStep]
+        //[AllureStep]
         public AddEmployeePage SetEmployeeId(string id = null)
         {
             if (!String.IsNullOrEmpty(id))
@@ -59,13 +62,13 @@ namespace OrangeHRM.Pages.EmployeePages
             return this;
         }
 
-        [AllureStep]
+        //[AllureStep]
         public string GetEmployeeId(string attribute = "value")
         {
             return appManager.UIInteraction.GetValueText(Selectors.EmployeeIdField, attribute);
         }
 
-        [AllureStep]
+        //[AllureStep]
         public AddEmployeePage UploadPhotograph(string filePath = null)
         {
             if (!String.IsNullOrEmpty(filePath))
@@ -73,11 +76,50 @@ namespace OrangeHRM.Pages.EmployeePages
             return this;
         }
 
-        [AllureStep]
-        public AddEmployeePage CreateLoginDetails(bool create = false)
+        //[AllureStep]
+        public AddEmployeePage CreateLoginDetails(bool create, UserDTO userDTO)
         {
             if (create)
-                appManager.UIInteraction.Click(Selectors.CreateLoginDetailsCheckbox);
+                ClickCreateLoginDetailsCheckbox()
+                .EnterUsername(userDTO.Username)
+                .EnterPassword(userDTO.Password)
+                .ConfirmPassword(userDTO.Password)
+                .Select(userDTO.Status);
+            return this;
+        }
+
+        //[AllureStep]
+        private AddEmployeePage ClickCreateLoginDetailsCheckbox()
+        {
+            appManager.UIInteraction.Click(Selectors.CreateLoginDetailsCheckbox);
+            return this;
+        }
+
+        //[AllureStep]
+        private AddEmployeePage EnterUsername(string username)
+        {
+            appManager.UIInteraction.EnterText(Selectors.UserNameField, username);
+            return this;
+        }
+
+        //[AllureStep]
+        private AddEmployeePage EnterPassword(string password)
+        {
+            appManager.UIInteraction.EnterText(Selectors.PasswordField, password);
+            return this;
+        }
+
+        //[AllureStep]
+        private AddEmployeePage ConfirmPassword(string password)
+        {
+            appManager.UIInteraction.EnterText(Selectors.ConfirmPasswordField, password);
+            return this;
+        }
+
+        //[AllureStep]
+        private AddEmployeePage Select(UserStatus status)
+        {
+            StatusDropDown.SelectByText(status.GetEnumDescription());
             return this;
         }
 

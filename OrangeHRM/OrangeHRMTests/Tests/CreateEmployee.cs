@@ -1,6 +1,7 @@
 ﻿using Allure.Commons.Model;
 using Allure.NUnit.Attributes;
 using NUnit.Framework;
+using OrangeHRM.DTO;
 using OrangeHRM.Tools;
 
 namespace OrangeHRMTests.Tests
@@ -11,6 +12,7 @@ namespace OrangeHRMTests.Tests
     public class CreateEmployee : BaseTest
     {
         private string _filePath = @"C:\\Users\1\Pictures\Снимок1.PNG";
+        private UserDTO _userDTO = new UserDTO();
 
         [Test(Description = "Create new user")]
         [AllureSeverity(SeverityLevel.Normal)]
@@ -22,7 +24,7 @@ namespace OrangeHRMTests.Tests
 
             AppManager.DashboardPage.Menu.ExpandMenuTreeAndSeectItem("PIM", "Add Employee");
 
-            AppManager.AddEmployeePage.AddEmployee(Faker.Name.First(), Faker.Name.Last(), filePath: _filePath);
+            AppManager.AddEmployeePage.AddEmployee(Faker.Name.First(), Faker.Name.Last(), filePath: _filePath, create: true, userDTO: _userDTO);
         }
     }
 }

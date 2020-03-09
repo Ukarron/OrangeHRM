@@ -12,7 +12,8 @@ namespace OrangeHRM.DTO
         public UserRole UserRole { get; set; }
         public UserStatus Status { get; set; }
 
-        public UserDTO(UserRole userRole, UserStatus status, string employeeName = null, string username = null, string password = null)
+        public UserDTO(UserRole userRole = UserRole.Admin, UserStatus status = UserStatus.Enabled,
+            string employeeName = null, string username = null, string password = null)
         {
             if (String.IsNullOrEmpty(employeeName))
             {
