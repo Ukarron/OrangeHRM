@@ -65,7 +65,6 @@ namespace OrangeHRM
             var input = _driver.FindElement(element);
             _waiter.WaitForElementExists(element);
             input.SendKeys(filePath);
-            input.Submit();
         }
 
         public Actions Actions
